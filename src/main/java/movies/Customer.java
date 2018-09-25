@@ -27,17 +27,17 @@ import java.util.Enumeration;
 import java.util.Vector;
 
 public class Customer {
-    private String _name;
-    private Vector _rentals = new Vector();
-    private static int _renterPoints = 0;
-    private static double _owedAmount = 0;
+    private String name;
+    private Vector rented = new Vector();
+    private static int renterPoints = 0;
+    private static double owedAmount = 0;
 
     /**
      * Constructor of customer with the name
-     * @param name of the customer
+     * @param n of the customer
      */
-    public Customer(String name) {
-        _name = name;
+    public Customer(String n) {
+        name = n;
     }
 
     /**
@@ -45,7 +45,7 @@ public class Customer {
      * @param arg Movie and days rented
      */
     public void addRental(Rental arg) {
-        _rentals.addElement(arg);
+        rented.addElement(arg);
     }
 
     /**
@@ -53,7 +53,7 @@ public class Customer {
      * @return customer's name
      */
     public String getName() {
-        return _name;
+        return name;
     }
 
     /**
@@ -64,8 +64,8 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         //add footer lines
         result += stateDebt();
-        result += "Amount owed is " + String.valueOf(_owedAmount) + "\n";
-        result += "You earned " + String.valueOf(_renterPoints) + " frequent renter points";
+        result += "Amount owed is " + String.valueOf(owedAmount) + "\n";
+        result += "You earned " + String.valueOf(renterPoints) + " frequent renter points";
         return result;
     }
 
@@ -75,16 +75,16 @@ public class Customer {
      */
     public String stateDebt(){
         String result = "";
-        Enumeration rentals = _rentals.elements();
+        Enumeration rentals = rented.elements();
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
             // add frequent renter points
-            _renterPoints++;
+            renterPoints++;
             // add bonus for a two day new release rental
 
             if (each.getMovie() instanceof NewReleaseMovie && each.getDaysRented() > 1) {
-                _renterPoints++;
+                renterPoints++;
                 //determine amounts for each movie depending of the movie children it is
                 thisAmount += each.getDaysRented() * 3;
             }
@@ -102,7 +102,7 @@ public class Customer {
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t" +
                     String.valueOf(thisAmount) + "\n";
-            _owedAmount += thisAmount;
+            owedAmount += thisAmount;
 
 
         }

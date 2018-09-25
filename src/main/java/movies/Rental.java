@@ -22,19 +22,19 @@ package movies;
 import movies.movie.Movie;
 
 public class Rental {
-    private Movie _movie;
-    private int _daysRented;
+    private Movie movie;
+    private int daysRented;
 
     public Rental(Movie movie, int daysRented) {
-        _movie = movie;
-        _daysRented = daysRented;
+        movie = movie;
+        daysRented = daysRented;
     }
 
     public int getDaysRented() {
-        return _daysRented;
+        return daysRented;
     }
 
     public Movie getMovie() {
-        return _movie;
+        return movie;
     }
 }
