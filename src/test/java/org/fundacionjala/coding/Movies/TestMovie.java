@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.Movies;
 
+import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
+import org.fundacionjala.coding.KevinHerrera.Movies.Movie.MovieFactory;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -8,50 +10,55 @@ import static org.junit.Assert.assertEquals;
  * @version 0.1
  */
 public class TestMovie {
-
+    static final String REGULAR_MOVIE_TITLE = "Superman";
+    static final String NEW_RELEASE_MOVIE_TITLE = "Star Wars 8";
+    static final String CHILDREN_MOVIE_TITLE = "Lady bug";
+    static final String REGULAR_MOVIE_PRICE_CODE_STRING = "REGULAR";
+    /**
+     * .
+     */
     @Test
-    public void test_CreateRegularMovie(){
-        Movie newMovie = new Movie("Batman",Movie.REGULAR);
-        assertEquals(0, newMovie.getPriceCode());
+    @SuppressWarnings("checkstyle:magicnumber")
+    public void testCreateRegularMovie() {
+        Movie newMovie = MovieFactory.createRegularMovie(REGULAR_MOVIE_TITLE);
+        assertEquals(Movie.REGULAR, newMovie.getPriceCode());
     }
 
+    /**
+     * .
+     */
     @Test
-    public void test_CreateNewReleaseMovie(){
-        Movie newMovie = new Movie("Batman",Movie.NEW_RELEASE);
-        assertEquals(1, newMovie.getPriceCode());
+    @SuppressWarnings("checkstyle:magicnumber")
+    public void testCreateNewReleaseMovie() {
+        Movie newMovie = MovieFactory.createNewReleaseMovie(NEW_RELEASE_MOVIE_TITLE);
+        assertEquals(Movie.NEW_RELEASE, newMovie.getPriceCode());
     }
 
+    /**
+     * .
+     */
     @Test
-    public void test_CreateChildrenMovie(){
-        Movie newMovie = new Movie("Litle pig",Movie.CHILDRENS);
-        assertEquals(2, newMovie.getPriceCode());
+    @SuppressWarnings("checkstyle:magicnumber")
+    public void testCreateChildrenMovie() {
+        Movie newMovie = MovieFactory.createChildrenMovie(CHILDREN_MOVIE_TITLE);
+        assertEquals(Movie.CHILDREN, newMovie.getPriceCode());
     }
 
+    /**
+     * .
+     */
     @Test
-    public void test_SetMoviePriceCodeRegular(){
-        Movie newMovie = new Movie("Litle pig",Movie.CHILDRENS);
-        newMovie.setPriceCode(Movie.REGULAR);
-        assertEquals(0, newMovie.getPriceCode());
+    public void testGetMovieTitle() {
+        Movie newMovie = MovieFactory.createRegularMovie(REGULAR_MOVIE_TITLE);
+        assertEquals(REGULAR_MOVIE_TITLE, newMovie.getTitle());
     }
 
+    /**
+     * .
+     */
     @Test
-    public void test_SetMoviePriceCodeNewRelease(){
-        Movie newMovie = new Movie("Little pig",Movie.CHILDRENS);
-        newMovie.setPriceCode(Movie.NEW_RELEASE);
-        assertEquals(1, newMovie.getPriceCode());
+    public void testPriceCodeToString() {
+        Movie newMovie = MovieFactory.createRegularMovie(REGULAR_MOVIE_TITLE);
+        assertEquals(REGULAR_MOVIE_PRICE_CODE_STRING, newMovie.priceCodeToString());
     }
-
-    @Test
-    public void test_SetMoviePriceCodeChildren(){
-        Movie newMovie = new Movie("Batman",Movie.NEW_RELEASE);
-        newMovie.setPriceCode(Movie.CHILDRENS);
-        assertEquals(2, newMovie.getPriceCode());
-    }
-
-    @Test
-    public void test_GetMovieTitle(){
-        Movie newMovie = new Movie("Batman",Movie.NEW_RELEASE);
-        assertEquals("Batman", newMovie.getTitle());
-    }
-
 }
