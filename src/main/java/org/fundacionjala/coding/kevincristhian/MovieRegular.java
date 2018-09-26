@@ -1,16 +1,16 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.kevincristhian;
 
 /**
- * child class of movie
+ * child class of movie.
  */
 public class MovieRegular extends Movie {
 
     /**
-     * the constructor of the class
+     * the constructor of the class.
      *
      * @param title the title of the movie
      */
-    public MovieRegular(String title) {
+    public MovieRegular(final String title) {
         super(title);
         setCost(2);
     }

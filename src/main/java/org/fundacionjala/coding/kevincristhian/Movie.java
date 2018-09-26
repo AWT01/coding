@@ -1,23 +1,23 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.kevincristhian;
 
 /**
- * father class for movies
+ * father class for movies.
  */
 public abstract class Movie {
     private String title;
     private double cost;
 
     /**
-     * the constructor of the class
+     * the constructor of the class.
      *
      * @param title the title of the movie
      */
-    public Movie(String title) {
+    public Movie(final String title) {
         this.title = title;
     }
 
     /**
-     * getter of title
+     * getter of title.
      *
      * @return the value of title
      */
@@ -26,16 +26,16 @@ public abstract class Movie {
     }
 
     /**
-     * setter for cost of the movie
+     * setter for cost of the movie.
      *
-     * @param cost
+     * @param cost the new cost of the movie
      */
     public void setCost(double cost) {
         this.cost = cost;
     }
 
     /**
-     * getter for the cost of the movie
+     * getter for the cost of the movie.
      *
      * @return cost
      */
