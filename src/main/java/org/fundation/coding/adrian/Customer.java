@@ -12,20 +12,20 @@
  * with Jala Foundation.
  */
 
+
+package org.fundation.coding.adrian;
+
 /**
  * Customer of a video club that can rent movies get debt and renter points
  *
  * @version 1.0.
  */
-package movies;
-
-import movies.movie.ChildrenMovie;
-import movies.movie.NewReleaseMovie;
-import movies.movie.RegularMovie;
-
 import java.util.Enumeration;
 import java.util.Vector;
 
+/**
+ * Customer that rents movies.
+ */
 public class Customer {
     private String name;
     private Vector rented = new Vector();
@@ -33,31 +33,31 @@ public class Customer {
     private static double owedAmount = 0;
 
     /**
-     * Constructor of customer with the name
+     * Constructor of customer with the name.
      * @param n of the customer
      */
-    public Customer(String n) {
+    public Customer(final String n) {
         name = n;
     }
 
     /**
-     * Add a movie as rented by the customer in the customer rented list
+     * Add a movie as rented by the customer in the customer rented list.
      * @param arg Movie and days rented
      */
-    public void addRental(Rental arg) {
+    public void addRental(final Rental arg) {
         rented.addElement(arg);
     }
 
     /**
-     * Get the customer's name
+     * Get the customer's name.
      * @return customer's name
      */
-    public String getName() {
+    private String getName() {
         return name;
     }
 
     /**
-     * Get a string with the customer's statement of how much he owes and how many renter points he have
+     * Get a string with the customer's statement of how much he owes and how many renter points he have.
      * @return String with statement
      */
     public String statement() {
@@ -70,43 +70,28 @@ public class Customer {
     }
 
     /**
-     * Calculate how much the costumer owes
+     * Calculate how much the costumer owes.
      * @return owed quantity
      */
-    public String stateDebt(){
-        String result = "";
+    public String stateDebt() {
+        StringBuilder result = new StringBuilder();
         Enumeration rentals = rented.elements();
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();
             // add frequent renter points
             renterPoints++;
-            // add bonus for a two day new release rental
-
-            if (each.getMovie() instanceof NewReleaseMovie && each.getDaysRented() > 1) {
-                renterPoints++;
-                //determine amounts for each movie depending of the movie children it is
-                thisAmount += each.getDaysRented() * 3;
-            }
-            if (each.getMovie() instanceof ChildrenMovie) {
-                thisAmount += 1.5;
-                if (each.getDaysRented() > 3)
-                    thisAmount += (each.getDaysRented() - 3) * 1.5;
-            }
-            if (each.getMovie() instanceof RegularMovie) {
-                thisAmount += 2;
-                if (each.getDaysRented() > 2)
-                    thisAmount += (each.getDaysRented() - 2) * 1.5;
-            }
-
+            //calculate the debt per movie
+            thisAmount += each.getMovie().calculateDebt(each.getDaysRented());
+            // Add renter points if the movie is new release;
+            renterPoints += each.getMovie().renterPointbonus(each.getDaysRented());
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
+            result.append("\t").append(each.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
             owedAmount += thisAmount;
 
 
         }
-        return result;
+        return result.toString();
     }
 
 }

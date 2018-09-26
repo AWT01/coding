@@ -16,14 +16,20 @@
  * Main class for testing
  * @version 1.0.
  */
-package movies;
+package org.fundation.coding.adrian;
 
-import movies.movie.Movie;
-import movies.movie.NewReleaseMovie;
-import movies.movie.RegularMovie;
+import org.fundation.coding.adrian.movie.NewReleaseMovie;
+import org.fundation.coding.adrian.movie.RegularMovie;
 
-public class Main {
-    public static void main(String[] args) {
+/**
+ * Main class.
+ */
+class Main {
+    /**
+     * Main method.
+     * @param args args of main
+     */
+    public static void main(final String[] args) {
         Customer customer = new Customer("Test");
         customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), 2));
         customer.addRental(new Rental(new RegularMovie("Terminator"), 2));

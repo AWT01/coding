@@ -12,28 +12,40 @@
  * with Jala Foundation.
  */
 
+package org.fundation.coding.adrian;
+
+import org.fundation.coding.adrian.movie.Movie;
 /**
- * Related to rent movies
+ * Related to rent movies.
  *
  * @version 1.0.
  */
-package movies;
-
-import movies.movie.Movie;
-
 public class Rental {
     private Movie movie;
     private int daysRented;
 
-    public Rental(Movie movie, int daysRented) {
-        movie = movie;
-        daysRented = daysRented;
+    /**
+     * Rental of movies.
+     * @param m movie to be rented
+     * @param dRented days of movie as rented
+     */
+    public Rental(final Movie m, int dRented) {
+        movie = m;
+        daysRented = dRented;
     }
 
+    /**
+     * getter for days rented.
+     * @return no of days
+     */
     public int getDaysRented() {
         return daysRented;
     }
 
+    /**
+     * get the movie rented.
+     * @return movie
+     */
     public Movie getMovie() {
         return movie;
     }

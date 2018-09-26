@@ -1,6 +1,6 @@
 package movies.test;
 
-import movies.Customer;
+import org.fundation.coding.adrian.Customer;
 import org.junit.Test;
 
 

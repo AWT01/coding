@@ -12,17 +12,31 @@
  * with Jala Foundation.
  */
 
+
+package org.fundation.coding.adrian.movie;
+
 /**
- * Regular movies class children of Movie class
+ * Children movie class children of Movie.
  *
  * @author Adrian Rojas - AWT-[01].
  * @version 1.0.
  */
-package movies.movie;
+public class ChildrenMovie extends Movie {
 
-public class RegularMovie extends Movie {
-
-    public RegularMovie(String title) {
+    /**
+     * Constructor for child movies.
+     * @param title title
+     */
+    public ChildrenMovie(final String title) {
         super(title);
+    }
+
+    @Override
+    public double calculateDebt(int daysRented) {
+        double thisAmount = 1.5;
+        if (daysRented > 3) {
+            thisAmount += (daysRented - 3) * 1.5;
+        }
+        return thisAmount;
     }
 }
