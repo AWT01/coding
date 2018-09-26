@@ -1,13 +1,13 @@
-package org.fundacionjala.coding.KevinHerrera.Movies.Customer;
+package org.fundacionjala.coding.kevinherrera.movies.customer;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Rental.RentalMovie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Rental.RentalFactory;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.rental.RentalMovie;
+import org.fundacionjala.coding.kevinherrera.movies.rental.RentalFactory;
 
 /**
- * @author KevinHerrera - AWT-[01].
+ * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 public class Customer implements IRentMovie {
@@ -21,7 +21,7 @@ public class Customer implements IRentMovie {
      */
     public Customer(final String name) {
         this.name = name;
-        rentedMoviesList = new ArrayList<RentalMovie>();
+        rentedMoviesList = new ArrayList<>();
     }
 
     /**
@@ -51,8 +51,7 @@ public class Customer implements IRentMovie {
         }
         bld.append("Amount owned is " + getTotalBillAmount()  + "$" + System.lineSeparator());
         bld.append("You earned:" + frequentRenterPoints + " frequent renter points");
-        String result = bld.toString();
-        return result;
+        return bld.toString();
     }
 
     /**

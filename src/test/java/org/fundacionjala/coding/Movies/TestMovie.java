@@ -1,12 +1,12 @@
 package org.fundacionjala.coding.Movies;
 
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.MovieFactory;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * @author KevinHerrera - AWT-[01].
+ * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 public class TestMovie {

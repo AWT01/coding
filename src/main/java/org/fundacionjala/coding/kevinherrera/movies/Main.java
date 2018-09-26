@@ -1,11 +1,11 @@
-package org.fundacionjala.coding.KevinHerrera.Movies;
+package org.fundacionjala.coding.kevinherrera.movies;
 
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.MovieFactory;
-import org.fundacionjala.coding.KevinHerrera.Movies.Customer.Customer;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
+import org.fundacionjala.coding.kevinherrera.movies.customer.Customer;
 
 /**
- * @author KevinHerrera - AWT-[01].
+ * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 

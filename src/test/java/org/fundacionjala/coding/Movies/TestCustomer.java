@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.Movies;
 
-import org.fundacionjala.coding.KevinHerrera.Movies.Customer.Customer;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.MovieFactory;
+import org.fundacionjala.coding.kevinherrera.movies.customer.Customer;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -47,7 +47,7 @@ public class TestCustomer {
         Customer customerTest = new Customer("test");
         Movie movie = MovieFactory.createRegularMovie(REGULAR_MOVIE_TITLE);
         customerTest.rentMovie(movie, DAYS_RENT_2);
-        assertEquals("Batman", customerTest.getRentedMoviesList().get(0).getMovie().getTitle());
+        assertEquals(REGULAR_MOVIE_TITLE, customerTest.getRentedMoviesList().get(0).getMovie().getTitle());
         assertEquals(DAYS_RENT_2, customerTest.getRentedMoviesList().get(0).getDaysRented());
     }
 
@@ -76,8 +76,6 @@ public class TestCustomer {
         Customer customerTest = new Customer("juan");
         Movie regularMovie = MovieFactory.createRegularMovie("Batman");
         customerTest.rentMovie(regularMovie, DAYS_RENT_2);
-        //rent regular: 2 per day, if(daysRented>2)--> 1.5 per day;
-        //(2*2) = 4
         assertEquals(RENT_AMOUNT_4, customerTest.getTotalBillAmount());
     }
 
@@ -89,8 +87,6 @@ public class TestCustomer {
         Customer customerTest = new Customer("juan");
         Movie regularMovie = MovieFactory.createRegularMovie("Batman");
         customerTest.rentMovie(regularMovie, DAYS_RENT_6);
-        //rent regular: 2 per day, if(daysRented>2)-->  1.5 per day;
-        //(2*2) = 4 + (4*1.5) = 10
         assertEquals(RENT_AMOUNT_10, customerTest.getTotalBillAmount());
     }
 
@@ -101,9 +97,7 @@ public class TestCustomer {
     public void test5DaysGetRentAmountForNewReleaseMovie() {
         Customer customerTest = new Customer("juan");
         Movie newMovie = MovieFactory.createNewReleaseMovie("Batman");
-        //rent new release: DaysRented * 3 ;
         customerTest.rentMovie(newMovie, DAYS_RENT_5);
-        //(5*3) = 15
         assertEquals(RENT_AMOUNT_15, customerTest.getTotalBillAmount());
     }
 
@@ -114,9 +108,7 @@ public class TestCustomer {
     public void test10DaysGetRentAmountForChildrenMovie() {
         Customer customerTest = new Customer("juan");
         Movie childMovie = MovieFactory.createChildrenMovie(CHILDREN_MOVIE_TITLE);
-        //rent children: 1.5 per day;
         customerTest.rentMovie(childMovie, DAYS_RENT_10);
-        //(10*1.5) = 15
         assertEquals(RENT_AMOUNT_15, customerTest.getTotalBillAmount());
     }
 
@@ -132,7 +124,6 @@ public class TestCustomer {
         customerTest.rentMovie(newMovie1, DAYS_RENT_5);
         customerTest.rentMovie(newMovie2, DAYS_RENT_5);
         customerTest.rentMovie(newMovie3, DAYS_RENT_5);
-        //1 point for movie rented, 1 point more for >2 days new release rent
         assertEquals(RENT_POINTS_3, customerTest.getFrequentRenterPoints());
     }
 
@@ -148,7 +139,6 @@ public class TestCustomer {
         customerTest.rentMovie(newMovie1, DAYS_RENT_3);
         customerTest.rentMovie(newMovie2, DAYS_RENT_3);
         customerTest.rentMovie(newMovie3, DAYS_RENT_3);
-        //1 point for movie rented, 1 point more for >2 days new release rent
         assertEquals(RENT_POINTS_4, customerTest.getFrequentRenterPoints());
     }
 
@@ -160,7 +150,6 @@ public class TestCustomer {
         Customer customerTest = new Customer("juan");
         Movie newMovie = MovieFactory.createNewReleaseMovie(NEW_RELEASE_MOVIE_TITLE);
         customerTest.rentMovie(newMovie, DAYS_RENT_5);
-        //1 point for movie rented, 1 point more for >2 days new release rent
         assertEquals(RENT_POINTS_2, customerTest.getFrequentRenterPoints());
     }
 

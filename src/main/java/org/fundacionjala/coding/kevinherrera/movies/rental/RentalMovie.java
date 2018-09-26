@@ -1,9 +1,9 @@
-package org.fundacionjala.coding.KevinHerrera.Movies.Rental;
+package org.fundacionjala.coding.kevinherrera.movies.rental;
 
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
 
 /**
- * @author KevinHerrera - AWT-[01].
+ * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 public class RentalMovie {

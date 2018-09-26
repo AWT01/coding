@@ -1,11 +1,11 @@
-package org.fundacionjala.coding.KevinHerrera.Movies.Customer;
+package org.fundacionjala.coding.kevinherrera.movies.customer;
 
 import java.util.List;
-import org.fundacionjala.coding.KevinHerrera.Movies.Movie.Movie;
-import org.fundacionjala.coding.KevinHerrera.Movies.Rental.RentalMovie;
+import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinherrera.movies.rental.RentalMovie;
 
 /**
- * @author KevinHerrera - AWT-[01].
+ * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 public interface IRentMovie {
