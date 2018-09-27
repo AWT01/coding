@@ -19,16 +19,12 @@ public final class Main {
         Customer customer;
         Movie movie;
         Rental rental;
-        customer = new Customer("Test");
-
-        movie = new MovieRegular("Terminator");
-        rental = new Rental(movie, 2);
-        customer.addRental(rental);
-
-        movie = new MovieNew("The Revenant");
-        rental = new Rental(movie, 2);
-        customer.addRental(rental);
-
+        rental = new Rental();
+        movie = new MovieRegular("Terminator", 2);
+        rental.addMovie(movie);
+        movie = new MovieNew("The Revenant", 2);
+        rental.addMovie(movie);
+        customer = new Customer("Test", rental);
         System.out.println(customer.statement());
     }
 }

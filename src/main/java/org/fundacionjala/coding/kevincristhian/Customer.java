@@ -1,36 +1,22 @@
 package org.fundacionjala.coding.kevincristhian;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 /**
  * customer class, it has a 1 to N
  * relation with rental class.
  */
 public class Customer {
     private String name;
-    private ArrayList<Rental> rentals;
+    private Rental rental;
 
     /**
      * constructor for customer.
      *
      * @param name the name of the customer
+     * @param rental rental object
      */
-    public Customer(final String name) {
+    public Customer(final String name, final Rental rental) {
         this.name = name;
-        rentals = new ArrayList<>();
-    }
-
-    /**
-     * this function add the rental
-     * to a list, it will help to process
-     * many rentals.
-     *
-     * @param rental it need a rental
-     *               to add
-     */
-    public void addRental(final Rental rental) {
-        rentals.add(rental);
+        this.rental = rental;
     }
 
     /**
@@ -49,21 +35,16 @@ public class Customer {
      * of the rent and the total points of a rent
      */
     public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        String result = "Rental Record for " + name + "\n";
-
-        for (Rental each : rentals) {
-            totalAmount += each.getRentCost();
-            frequentRenterPoints += each.getRentPoint();
-        }
-        result += "===================================\n";
-        result += "Amount owed is " + totalAmount
-                + "\n";
-        result += "===================================\n";
-        result += "You earned " + frequentRenterPoints
-                +
-                " frequent renter points";
-        return result;
+        StringBuilder result = new StringBuilder();
+        result.append("Rental Record for ");
+        result.append(name);
+        result.append("\n");
+        result.append("Amount owed is ");
+        result.append(rental.calculateTotalCost());
+        result.append("\n");
+        result.append("You earned ");
+        result.append(rental.calculateTotalPoints());
+        result.append(" frequent renter points");
+        return result.toString();
     }
 }

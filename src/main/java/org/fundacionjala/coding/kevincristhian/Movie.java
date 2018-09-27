@@ -5,15 +5,20 @@ package org.fundacionjala.coding.kevincristhian;
  */
 public abstract class Movie {
     private String title;
-    private double cost;
+    private double costFactor;
+    private int frequentPoints;
+    private int daysRented;
 
     /**
      * the constructor of the class.
      *
      * @param title the title of the movie
+     * @param daysRented number of days rented
      */
-    public Movie(final String title) {
+    public Movie(final String title, int daysRented) {
         this.title = title;
+        this.frequentPoints = 1;
+        this.daysRented = daysRented;
     }
 
     /**
@@ -26,12 +31,13 @@ public abstract class Movie {
     }
 
     /**
-     * setter for cost of the movie.
+     * setter for costFactor of the movie.
      *
-     * @param cost the new cost of the movie
+     * @param costFactor the new costFactor of the movie
      */
-    public void setCost(double cost) {
-        this.cost = cost;
+
+    public void setCostFactor(double costFactor) {
+        this.costFactor = costFactor;
     }
 
     /**
@@ -39,8 +45,41 @@ public abstract class Movie {
      *
      * @return cost
      */
-    public double getCost() {
-        return cost;
+    public double getCostFactor() {
+        return costFactor;
     }
-    public abstract int calculteFrenquentPoints(int rentedDays);
+
+    /**
+     * set the frequent points.
+     *
+     * @param frequentPoints set points
+     */
+    public void setFrequentPoints(int frequentPoints) {
+        this.frequentPoints = frequentPoints;
+    }
+
+    /**
+     * getter of frequent points.
+     *
+     * @return amount of points
+     */
+    public int getFrequentPoints() {
+        return frequentPoints;
+    }
+
+    /**
+     * getter of days rented.
+     *
+     * @return number of days
+     */
+    public int getDaysRented() {
+        return daysRented;
+    }
+
+    /**
+     *abstract method for rent cost of the movie.
+     *
+     * @return amount of rent
+     */
+    public abstract double calculateRentCost();
 }
