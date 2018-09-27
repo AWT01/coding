@@ -20,18 +20,21 @@ package org.fundation.coding.adrian;
  *
  * @version 1.0.
  */
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+import static java.util.logging.Level.INFO;
 
 /**
  * Customer that rents movies.
  */
 public class Customer {
     private String name;
-    private Vector rented = new Vector();
-    private static int renterPoints = 0;
-    private static double owedAmount = 0;
-
+    private List<Rental> rented = new ArrayList<>();
+    private int renterPoints = 0;
+    private double owedAmount = 0;
+    private static final Logger LOGGER = Logger.getLogger(Customer.class.getName());
     /**
      * Constructor of customer with the name.
      * @param n of the customer
@@ -45,7 +48,7 @@ public class Customer {
      * @param arg Movie and days rented
      */
     public void addRental(final Rental arg) {
-        rented.addElement(arg);
+        rented.add(arg);
     }
 
     /**
@@ -57,6 +60,12 @@ public class Customer {
     }
 
     /**
+     * Logs statement.
+     */
+    public void logStatement() {
+        LOGGER.log(INFO, statement());
+    }
+    /**
      * Get a string with the customer's statement of how much he owes and how many renter points he have.
      * @return String with statement
      */
@@ -64,8 +73,8 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         //add footer lines
         result += stateDebt();
-        result += "Amount owed is " + String.valueOf(owedAmount) + "\n";
-        result += "You earned " + String.valueOf(renterPoints) + " frequent renter points";
+        result += "Amount owed is " + owedAmount + "\n";
+        result += "You earned " + renterPoints + " frequent renter points";
         return result;
     }
 
@@ -75,17 +84,11 @@ public class Customer {
      */
     public String stateDebt() {
         StringBuilder result = new StringBuilder();
-        Enumeration rentals = rented.elements();
-        while (rentals.hasMoreElements()) {
+        for (Rental each: rented) {
             double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
-            // add frequent renter points
             renterPoints++;
-            //calculate the debt per movie
             thisAmount += each.getMovie().calculateDebt(each.getDaysRented());
-            // Add renter points if the movie is new release;
             renterPoints += each.getMovie().renterPointbonus(each.getDaysRented());
-            //show figures for this rental
             result.append("\t").append(each.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");
             owedAmount += thisAmount;
 
@@ -94,4 +97,18 @@ public class Customer {
         return result.toString();
     }
 
+    /**
+     * Getter for renterpoints.
+     * @return renterpoints var
+     */
+    public int getRenterPoints() {
+        return renterPoints;
+    }
+    /**
+     * Getter for owedAmount.
+     * @return owedAmount return the var
+     */
+    public double getOwedAmount() {
+        return owedAmount;
+    }
 }

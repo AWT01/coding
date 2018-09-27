@@ -22,6 +22,8 @@ package org.fundation.coding.adrian.movie;
  */
 public class NewReleaseMovie extends Movie {
 
+    private static final double MULTIPLIER = 3;
+
     /**
      * constructor for new release movie.
      * @param title title
@@ -32,7 +34,7 @@ public class NewReleaseMovie extends Movie {
 
     @Override
     public double calculateDebt(int daysRented) {
-        return daysRented * 3;
+        return daysRented * MULTIPLIER;
     }
     @Override
     public int renterPointbonus(int daysRented) {

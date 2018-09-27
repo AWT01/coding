@@ -12,19 +12,22 @@
  * with Jala Foundation.
  */
 
-/**
- * Main class for testing
- * @version 1.0.
- */
 package org.fundation.coding.adrian;
+
 
 import org.fundation.coding.adrian.movie.NewReleaseMovie;
 import org.fundation.coding.adrian.movie.RegularMovie;
 
 /**
- * Main class.
+ * Main class for testing.
+ * @version 1.0.
  */
 class Main {
+
+    /**
+     * Protected constructor for Main.
+     */
+    protected Main() { }
     /**
      * Main method.
      * @param args args of main
@@ -33,6 +36,7 @@ class Main {
         Customer customer = new Customer("Test");
         customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), 2));
         customer.addRental(new Rental(new RegularMovie("Terminator"), 2));
-        System.out.println(customer.statement());
+        customer.logStatement();
+
     }
 }

@@ -22,6 +22,8 @@ package org.fundation.coding.adrian.movie;
  */
 public class RegularMovie extends Movie {
 
+    private static final double MULTIPLIER = 1.5;
+
     /**
      * Constructor for regular movie.
      * @param title title of the movie
@@ -34,7 +36,7 @@ public class RegularMovie extends Movie {
     public double calculateDebt(int daysRented) {
         double thisAmount = 2;
         if (daysRented > 2) {
-            thisAmount += (daysRented - 2) * 1.5;
+            thisAmount += (daysRented - 2) * MULTIPLIER;
         }
         return thisAmount;
     }

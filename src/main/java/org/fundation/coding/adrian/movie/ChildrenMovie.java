@@ -23,6 +23,8 @@ package org.fundation.coding.adrian.movie;
  */
 public class ChildrenMovie extends Movie {
 
+    private static final double MULTIPLIER = 1.5;
+
     /**
      * Constructor for child movies.
      * @param title title
@@ -33,9 +35,9 @@ public class ChildrenMovie extends Movie {
 
     @Override
     public double calculateDebt(int daysRented) {
-        double thisAmount = 1.5;
-        if (daysRented > 3) {
-            thisAmount += (daysRented - 3) * 1.5;
+        double thisAmount = MULTIPLIER;
+        if (daysRented > MULTIPLIER * 2) {
+            thisAmount += (daysRented - MULTIPLIER * 2) * MULTIPLIER;
         }
         return thisAmount;
     }
