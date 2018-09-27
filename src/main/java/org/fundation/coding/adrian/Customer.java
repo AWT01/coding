@@ -60,12 +60,6 @@ public class Customer {
     }
 
     /**
-     * Logs statement.
-     */
-    public void logStatement() {
-        LOGGER.log(INFO, statement());
-    }
-    /**
      * Get a string with the customer's statement of how much he owes and how many renter points he have.
      * @return String with statement
      */
@@ -75,6 +69,7 @@ public class Customer {
         result += stateDebt();
         result += "Amount owed is " + owedAmount + "\n";
         result += "You earned " + renterPoints + " frequent renter points";
+        LOGGER.log(INFO, result);
         return result;
     }
 
@@ -86,7 +81,6 @@ public class Customer {
         StringBuilder result = new StringBuilder();
         for (Rental each: rented) {
             double thisAmount = 0;
-            renterPoints++;
             thisAmount += each.getMovie().calculateDebt(each.getDaysRented());
             renterPoints += each.getMovie().renterPointbonus(each.getDaysRented());
             result.append("\t").append(each.getMovie().getTitle()).append("\t").append(thisAmount).append("\n");

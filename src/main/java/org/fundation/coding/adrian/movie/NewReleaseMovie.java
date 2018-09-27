@@ -39,9 +39,9 @@ public class NewReleaseMovie extends Movie {
     @Override
     public int renterPointbonus(int daysRented) {
         if (daysRented > 1) {
-            return 1;
+            return 2;
         } else {
-            return 0;
+            return 1;
         }
     }
 }

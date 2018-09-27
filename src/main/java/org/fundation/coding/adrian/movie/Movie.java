@@ -21,6 +21,7 @@ package org.fundation.coding.adrian.movie;
  */
 public abstract class Movie {
     private String title;
+    private static int pointBonus = 1;
 
     /**
      * Movie constructor.
@@ -51,7 +52,7 @@ public abstract class Movie {
      * @return the points increased
      */
     public int renterPointbonus(int daysRented) {
-        return 0;
+        return pointBonus;
     }
 
 }

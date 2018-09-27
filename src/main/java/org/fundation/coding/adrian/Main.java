@@ -36,7 +36,7 @@ class Main {
         Customer customer = new Customer("Test");
         customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), 2));
         customer.addRental(new Rental(new RegularMovie("Terminator"), 2));
-        customer.logStatement();
+        customer.statement();
 
     }
 }
