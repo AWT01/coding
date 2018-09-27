@@ -1,26 +1,28 @@
-package org.foundation.coding.Movie;
+package org.foundation.coding.movie;
 
 public class Movie {
-    public static final int CHILDRENS = 2;
-    public static final int REGULAR = 0;
-    public static final int NEW_RELEASE = 1;
-    private String _title;
-    private int _priceCode;
+
+    private String title;
+    private int priceCode;
 
     public Movie(String title, int priceCode) {
-        _title = title;
-        _priceCode = priceCode;
-    }
-
-    public int getPriceCode() {
-        return _priceCode;
-    }
-
-    public void setPriceCode(int arg) {
-        _priceCode = arg;
+        this.setTitle(title);
+        this.setPriceCode(priceCode);
     }
 
     public String getTitle() {
-        return _title;
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getPriceCode() {
+        return priceCode;
+    }
+
+    public void setPriceCode(int priceCode) {
+        this.priceCode = priceCode;
     }
 }
