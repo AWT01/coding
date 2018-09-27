@@ -14,6 +14,6 @@ public class Printer {
             }
             i++;
         }
-        return cont+"/"+dim;
+        return String.format("%d/%d", cont, dim);
     }
 }
