@@ -1,21 +1,42 @@
+/**
+ * Refactor Code Tasks.
+ */
 package org.foundation.coding.rental;
-
 import org.foundation.coding.movie.Movie;
 
+/**
+ * Class support the rental of a movie.
+ */
 public class Rental {
-    private int days_rented;
-    private Movie movie;
 
-    public Rental(Movie movie, int days_rented) {
-        this.movie = movie;
-        this.days_rented = days_rented;
-    }
+  //days to rental the movie.
+  private int daysRented;
+  //the movie to rental.
+  private Movie movie;
 
-    public int getDays_rented() {
-        return days_rented;
-    }
+  /**
+   * constructor.
+   * @param movie receive.
+   * @param daysRented receive.
+   */
+  public Rental(final Movie movie, final int daysRented) {
+    this.movie = movie;
+    this.daysRented = daysRented;
+  }
 
-    public Movie getMovie() {
-        return movie;
-    }
+  /**
+   * give the day to rental.
+   * @return days rented.
+   */
+  public int getDaysRented() {
+    return daysRented;
+  }
+
+  /**
+   * give the movie to rental.
+   * @return movie.
+   */
+  public Movie getMovie() {
+    return movie;
+  }
 }
