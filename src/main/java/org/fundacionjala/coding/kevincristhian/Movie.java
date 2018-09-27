@@ -42,4 +42,5 @@ public abstract class Movie {
     public double getCost() {
         return cost;
     }
+    public abstract int calculteFrenquentPoints(int rentedDays);
 }

@@ -14,4 +14,9 @@ public class MovieRegular extends Movie {
         super(title);
         setCost(2);
     }
+
+    @Override
+    public int calculteFrenquentPoints(int rentedDays) {
+        return 1;
+    }
 }

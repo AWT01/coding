@@ -21,11 +21,11 @@ public class Rental {
     public Rental(final Movie movie, int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
-        if (movie instanceof MovieNew) {
+        /*if (movie instanceof MovieNew) {
             this.rentPoint = 2;
         } else {
             this.rentPoint = 1;
-        }
+        }*/
     }
 
     /**
@@ -52,7 +52,7 @@ public class Rental {
      * @return rent point value
      */
     public int getRentPoint() {
-        return rentPoint;
+        return movie.calculteFrenquentPoints(daysRented);
     }
 
     /**
