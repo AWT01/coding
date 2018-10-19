@@ -22,6 +22,15 @@ public abstract class Movie {
     }
 
     /**
+     * getter of title.
+     *
+     * @return the value of title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
      * setter for costFactor of the movie.
      *
      * @param costFactor the new costFactor of the movie
