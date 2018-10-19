@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
  * customer test class.
  */
 public class CustomerTest {
-    private static final double AMOUNT_OWNED = 8.0;
-    private static final int AMOUNT_POINTS = 3;
+    private static final double AMOUNT_OWNED = 9.5;
+    private static final int AMOUNT_POINTS = 4;
     private static final int DAYS_RENTED = 2;
 
     /**
@@ -33,6 +33,8 @@ public class CustomerTest {
         movie = new MovieRegular("Terminator",  DAYS_RENTED);
         rental.addMovie(movie);
         movie = new MovieNew("The Revenant",  DAYS_RENTED);
+        rental.addMovie(movie);
+        movie = new MovieChildren("Frozen", DAYS_RENTED);
         rental.addMovie(movie);
         Customer customer = new Customer("Test", rental);
         assertEquals(result.toString(), customer.statement());

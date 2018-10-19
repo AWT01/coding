@@ -20,15 +20,6 @@ public class Customer {
     }
 
     /**
-     * getter for the name of the customer.
-     *
-     * @return the name of the customer
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
      * it returns the state of the customer.
      *
      * @return a string with the total amount
