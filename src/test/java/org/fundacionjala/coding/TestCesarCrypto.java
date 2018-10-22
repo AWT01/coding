@@ -40,4 +40,29 @@ public class TestCesarCrypto {
         assertEquals("", crypto.decode(ENCODE_KEY_5, ""));
         assertEquals("", crypto.decode(ENCODE_KEY_MINUS_5, null));
     }
+
+    /**
+     * test encode with vigenere method.
+     */
+    @Test
+    public void testEncodeVigenere() {
+        CesarCrypto crypto = new CesarCrypto();
+        assertEquals("TXYP XMUNHCRC", crypto.encodeVigenere("Hola Jalasoft", "LIMON"));
+        assertEquals("!23$TXYP XMUNHCRC!23$", crypto.encodeVigenere("!23$Hola Jalasoft!23$", "LIMON"));
+        assertEquals("", crypto.encodeVigenere("", ""));
+        assertEquals("", crypto.encodeVigenere(null, null));
+    }
+
+    /**
+     * test encode with vigenere method.
+     */
+    @Test
+    public void testDecodeVigenere() {
+        CesarCrypto crypto = new CesarCrypto();
+        assertEquals("hola jalasoft", crypto.decodeVigenere("LIMON", "TXYP XMUNHCRC"));
+        assertEquals("!23$hola jalasoft!23$", crypto.decodeVigenere("LIMON", "!23$TXYP XMUNHCRC!23$"));
+        assertEquals("", crypto.decodeVigenere("", ""));
+        assertEquals("", crypto.decodeVigenere(null, null));
+
+    }
 }

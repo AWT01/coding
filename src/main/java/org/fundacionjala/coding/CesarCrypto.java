@@ -34,6 +34,26 @@ public class CesarCrypto {
     }
 
     /**
+     * encode the alphabetic values of a message using vigenere method.
+     * @param message message to encode
+     * @param key key to encode
+     * @return message as UPPERCASE type encode
+     */
+    public String encodeVigenere(final String message, final String key) {
+        return processEncryptVigenere(EncryptTask.ENCODE, message, key);
+    }
+
+    /**
+     * decode the alphabetic values of a message encoded with vigenere key.
+     * @param message message to decode
+     * @param key key to decode
+     * @return message as lowercase type decoded
+     */
+    public String decodeVigenere(final String key, final String message) {
+        return processEncryptVigenere(EncryptTask.DECODE, message, key).toLowerCase();
+    }
+
+    /**
      * internal process of encrypt functions.
      * @param task encrypt task
      * @param message message to process
@@ -61,6 +81,49 @@ public class CesarCrypto {
                             ? CHAR_Z_UPPER_HASHCODE - (aux2) : charHash - Math.abs(key);
                 }
                 messageBuilder.append(Character.toChars(newCharValue));
+            } else {
+                messageBuilder.append(c);
+            }
+        }
+        return messageBuilder.toString();
+    }
+
+    /**
+     * internal process of encrypt using vigenere method.
+     * @param task encrypt task
+     * @param message message to process
+     * @param stringKey codification key
+     * @return message encrypted or decrypted determinated by task value
+     */
+    private String processEncryptVigenere(final EncryptTask task, final String message, final String stringKey) {
+        StringBuilder messageBuilder = new StringBuilder();
+        if (message == null || stringKey == null) {
+            return messageBuilder.toString();
+        }
+        int keyIndex = 0;
+        char[] stringKeyArray = stringKey.toCharArray();
+        for (char c : message.toCharArray()) {
+            if (Character.isAlphabetic(c)) {
+                if (keyIndex >= stringKey.length()) {
+                    keyIndex = 0;
+                }
+                char auxChar = Character.toUpperCase(stringKeyArray[keyIndex]);
+                int key = Character.hashCode(auxChar) - (CHAR_A_UPPER_HASHCODE - 1);
+                int newCharValue = 0;
+                int charHash = Character.hashCode(Character.toUpperCase(c));
+                if (task == EncryptTask.ENCODE) {
+                    int aux = charHash + Math.abs(key);
+                    int aux2 = aux - CHAR_Z_UPPER_HASHCODE;
+                    newCharValue = aux > CHAR_Z_UPPER_HASHCODE ? (CHAR_A_UPPER_HASHCODE - 1) + aux2 : charHash + key;
+                }
+                if (task == EncryptTask.DECODE) {
+                    int aux = charHash - Math.abs(key);
+                    int aux2 = (CHAR_A_UPPER_HASHCODE - 1) - aux;
+                    newCharValue = aux < CHAR_A_UPPER_HASHCODE
+                            ? CHAR_Z_UPPER_HASHCODE - (aux2) : charHash - Math.abs(key);
+                }
+                messageBuilder.append(Character.toChars(newCharValue));
+                keyIndex++;
             } else {
                 messageBuilder.append(c);
             }
