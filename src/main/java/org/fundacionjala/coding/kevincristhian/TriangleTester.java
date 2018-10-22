@@ -1,14 +1,20 @@
 package org.fundacionjala.coding.kevincristhian;
 
 /**
- * Is this a triangle?. 7kyu
+ * Is this a triangle?. 7kyu.
  */
 public class TriangleTester {
+    private TriangleTester() {
+    }
+
+    /**
+     * returns true if is a triangle.
+     * @param a one side.
+     * @param b one side.
+     * @param c one side.
+     * @return boolean.
+     */
     public static boolean isTriangle(int a, int  b, int c) {
-        if (a + b > c && a + c > b && b + c >a){
-            return true;
-        } else {
-            return false;
-        }
+        return (a + b > c && a + c > b && b + c > a);
     }
 }

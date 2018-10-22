@@ -21,8 +21,16 @@ public class CesarCryptoTest {
         Assert.assertEquals("ZORRO", cesarCrypto.decode("ETWWT", -5));
         Assert.assertEquals("", cesarCrypto.decode("", 3));
         Assert.assertEquals("KROD", cesarCrypto.decode("HOLA", 3));
+        Assert.assertEquals("HOL A", cesarCrypto.decode("HOL A", 0));
         Assert.assertEquals("ZORRO", cesarCrypto.decode("ZORRO", -52));
         Assert.assertEquals("", cesarCrypto.decode("", 3));
         Assert.assertEquals("", cesarCrypto.decode(null, 3));
+    }
+
+    @Test
+    public void decodeVige() {
+        CesarCrypto cesarCrypto = new CesarCrypto();
+        Assert.assertEquals("HOLAJALASOFT", cesarCrypto.decodeVige("TXYPXMUNHCRC", "LIMON"));
+        Assert.assertEquals("HOLA JALASOFT", cesarCrypto.decodeVige("TXYP XMUNHCRC", "LIMON"));
     }
 }

@@ -33,7 +33,7 @@ public class CesarCrypto {
      * @param key word.
      * @return string.
      */
-    public String createKeyString(final String message, final String key) {
+    private String createKeyString(final String message, final String key) {
         int posKey = 0;
         int sizeKey = key.length() - 1;
         String newKey = "";
@@ -62,12 +62,12 @@ public class CesarCrypto {
         String newMessage = "";
         if (message != null) {
             int size = message.length();
-            String newkeyWord;
-            newkeyWord = createKeyString(message, keyWord);
+            String newKeyWord;
+            newKeyWord = createKeyString(message, keyWord);
             char newChar;
             for (int i = 0; i < size; i++) {
-                if (message.charAt(i) != ' ') {
-                    newChar = (char) (message.charAt(i) + newkeyWord.charAt(i) - SIXTY_FOUR);
+                if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
+                    newChar = (char) (message.charAt(i) + newKeyWord.charAt(i) - SIXTY_FOUR);
                     if (newChar > 'Z') {
                         newChar = (char) ((newChar - NINETY) + SIXTY_FOUR);
                     }
@@ -81,6 +81,33 @@ public class CesarCrypto {
     }
 
     /**
+     * decode vigenere.
+     * @param message to decode.
+     * @param keyWord key word.
+     * @return string
+     */
+    public String decodeVige(final String message, final String keyWord) {
+        String newMessage = "";
+        if (message != null) {
+            int size = message.length();
+            String newKeyWord;
+            newKeyWord = createKeyString(message, keyWord);
+            char newChar;
+            for (int i = 0; i < size; i++) {
+                if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
+                    newChar = (char) (message.charAt(i) - newKeyWord.charAt(i) + SIXTY_FOUR);
+                    if (newChar < 'A') {
+                        newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
+                    }
+                } else {
+                    newChar = message.charAt(i);
+                }
+                newMessage += newChar;
+            }
+        }
+        return newMessage;
+    }
+    /**
      * decode cesar (it can be used to encode too).
      * @param message message to decode.
      * @param key key to decode.
@@ -89,15 +116,21 @@ public class CesarCrypto {
     public String decode(final String message, int key) {
         String newMessage = "";
         key = verifyKey(key);
+        char newChar;
         if (message != null) {
             int size = message.length();
             for (int i = 0; i < size; i++) {
-                char newChar = (char) (message.charAt(i) + key);
-                if (newChar > 'Z') {
-                    newChar = (char) ((newChar - NINETY) + SIXTY_FOUR);
+                if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
+                    newChar = (char) (message.charAt(i) + key);
+                    if (newChar > 'Z') {
+                        newChar = (char) ((newChar - NINETY) + SIXTY_FOUR);
+                    }
+                    if (newChar < 'A') {
+                        newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
+                    }
                 }
-                if (newChar < 'A') {
-                    newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
+                else {
+                    newChar = message.charAt(i);
                 }
                 newMessage += newChar;
             }
