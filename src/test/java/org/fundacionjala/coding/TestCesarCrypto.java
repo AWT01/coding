@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * test CesarCrypto class
+ * test CesarCrypto class.
  */
 public class TestCesarCrypto {
     private static final int ENCODE_KEY_3 = 3;

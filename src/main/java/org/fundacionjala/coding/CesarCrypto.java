@@ -1,7 +1,7 @@
 package org.fundacionjala.coding;
 
 /**
- * Class to encode a message using a key
+ * Class to encode a message using a key.
  */
 public class CesarCrypto {
 
