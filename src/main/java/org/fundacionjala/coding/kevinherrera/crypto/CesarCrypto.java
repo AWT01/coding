@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.kevinherrera.crypto;
 
 /**
  * Class to encode a message using a key.

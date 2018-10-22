@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.kevinherrera.crypto;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
