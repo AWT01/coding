@@ -23,7 +23,7 @@ public class CesarCrypto {
                 } else {
                     key += TWENTY_SIX;
                 }
-            }
+        }
         return key;
     }
 
@@ -36,20 +36,20 @@ public class CesarCrypto {
     private String createKeyString(final String message, final String key) {
         int posKey = 0;
         int sizeKey = key.length() - 1;
-        String newKey = "";
+        StringBuffer newKey = new StringBuffer();
         for (int i = 0; i < message.length(); i++) {
             if (message.charAt(i) != ' ') {
-                newKey += key.charAt(posKey);
+                newKey.append(key.charAt(posKey));
                 if (posKey >= sizeKey) {
                     posKey = 0;
                 } else {
                     posKey++;
                 }
             } else {
-                newKey += message.charAt(i);
+                newKey.append(message.charAt(i));
             }
         }
-        return newKey;
+        return newKey.toString();
     }
 
     /**
@@ -59,7 +59,7 @@ public class CesarCrypto {
      * @return string.
      */
     public String encodeVigenere(final String message, final String keyWord) {
-        String newMessage = "";
+        StringBuffer newMessage = new StringBuffer();
         if (message != null) {
             int size = message.length();
             String newKeyWord;
@@ -74,10 +74,10 @@ public class CesarCrypto {
                 } else {
                     newChar = message.charAt(i);
                 }
-                newMessage += newChar;
+                newMessage.append(newChar);
             }
         }
-        return newMessage;
+        return newMessage.toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class CesarCrypto {
      * @return string
      */
     public String decodeVigenere(final String message, final String keyWord) {
-        String newMessage = "";
+        StringBuffer newMessage = new StringBuffer();
         if (message != null) {
             int size = message.length();
             String newKeyWord;
@@ -102,10 +102,10 @@ public class CesarCrypto {
                 } else {
                     newChar = message.charAt(i);
                 }
-                newMessage += newChar;
+                newMessage.append(newChar);
             }
         }
-        return newMessage;
+        return newMessage.toString();
     }
     /**
      * decode cesar (it can be used to encodeVigenere too).
@@ -114,7 +114,7 @@ public class CesarCrypto {
      * @return string.
      */
     public String decode(final String message, int key) {
-        String newMessage = "";
+        StringBuffer newMessage = new StringBuffer();
         key = verifyKey(key);
         char newChar;
         if (message != null) {
@@ -128,13 +128,12 @@ public class CesarCrypto {
                     if (newChar < 'A') {
                         newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
                     }
-                }
-                else {
+                } else {
                     newChar = message.charAt(i);
                 }
-                newMessage += newChar;
+                newMessage.append(newChar);
             }
         }
-        return newMessage;
+        return newMessage.toString();
     }
 }

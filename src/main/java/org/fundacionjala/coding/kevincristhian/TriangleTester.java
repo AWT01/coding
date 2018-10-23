@@ -3,7 +3,7 @@ package org.fundacionjala.coding.kevincristhian;
 /**
  * Is this a triangle?. 7kyu.
  */
-public class TriangleTester {
+public final class TriangleTester {
     /**
      * constructor.
      */

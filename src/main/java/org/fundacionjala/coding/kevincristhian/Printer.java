@@ -3,7 +3,7 @@ package org.fundacionjala.coding.kevincristhian;
 /**
  * Printer Errors 7kyu.
  */
-public class Printer {
+public final class Printer {
     /**
      * constructor.
      */

@@ -8,6 +8,11 @@ import org.junit.Test;
  */
 public class CesarCryptoTest {
 
+    private static final int NEGATIVE_THREE = -3;
+    private static final int NEGATIVE_FIVE = -5;
+    private static final int THREE = 3;
+    private static final int FIFTY_TWO = -52;
+    private static final int ZERO = 0;
     /**
      * encodeVigenere tests.
      */
@@ -24,14 +29,14 @@ public class CesarCryptoTest {
     @Test
     public void decodeCesar() {
         CesarCrypto cesarCrypto = new CesarCrypto();
-        Assert.assertEquals("HOLA", cesarCrypto.decode("KROD", -3));
-        Assert.assertEquals("ZORRO", cesarCrypto.decode("ETWWT", -5));
-        Assert.assertEquals("", cesarCrypto.decode("", 3));
-        Assert.assertEquals("KROD", cesarCrypto.decode("HOLA", 3));
-        Assert.assertEquals("HOL A", cesarCrypto.decode("HOL A", 0));
-        Assert.assertEquals("ZORRO", cesarCrypto.decode("ZORRO", -52));
-        Assert.assertEquals("", cesarCrypto.decode("", 3));
-        Assert.assertEquals("", cesarCrypto.decode(null, 3));
+        Assert.assertEquals("HOLA", cesarCrypto.decode("KROD", NEGATIVE_THREE));
+        Assert.assertEquals("ZORRO", cesarCrypto.decode("ETWWT", NEGATIVE_FIVE));
+        Assert.assertEquals("", cesarCrypto.decode("", THREE));
+        Assert.assertEquals("KROD", cesarCrypto.decode("HOLA", THREE));
+        Assert.assertEquals("HOL A", cesarCrypto.decode("HOL A", ZERO));
+        Assert.assertEquals("ZORRO", cesarCrypto.decode("ZORRO", FIFTY_TWO));
+        Assert.assertEquals("", cesarCrypto.decode("", THREE));
+        Assert.assertEquals("", cesarCrypto.decode(null, THREE));
     }
 
     /**

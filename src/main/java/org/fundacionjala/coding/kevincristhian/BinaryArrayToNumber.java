@@ -5,10 +5,10 @@ import java.util.List;
 /**
  * Ones and Zeros 7kyu.
  */
-public class BinaryArrayToNumber {
+public final class BinaryArrayToNumber {
 
     /**
-     * constructor
+     * constructor.
      */
     private BinaryArrayToNumber() {
     }
@@ -18,12 +18,12 @@ public class BinaryArrayToNumber {
      * @param binary value
      * @return int
      */
-    public static int convertBinaryArrayToInt(List<Integer> binary) {
+    public static int convertBinaryArrayToInt(final List<Integer> binary) {
       int dim = binary.size();
       int i = 0;
       int value = 0;
       while (dim > i) {
-          value += binary.get(i) * (int) (Math.pow(2,(dim - i - 1)));
+          value += binary.get(i) * (int) (Math.pow(2, (dim - i - 1)));
           i++;
       }
       return value;
