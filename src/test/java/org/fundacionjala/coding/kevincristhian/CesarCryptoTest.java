@@ -43,5 +43,6 @@ public class CesarCryptoTest {
         Assert.assertEquals("HOL A", cesarCrypto.encode("HOL A", ZERO));
         Assert.assertEquals(FOX, cesarCrypto.encode(FOX, FIFTY_TWO));
         Assert.assertEquals("", cesarCrypto.decode(null, THREE));
+        Assert.assertEquals("B", cesarCrypto.decode("A", ONE));
     }
 }

@@ -16,6 +16,8 @@ public class PrinterTest {
     public void printerError() {
         String s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
         assertEquals("3/56", Printer.printerError(s));
+        s = "Zaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+        assertEquals("4/56", Printer.printerError(s));
 
     }
 }
