@@ -18,7 +18,7 @@ public class VigenereCryptoTest {
         Assert.assertEquals("TXYPXMUNHCRC", vigenereCrypto.encode("HOLAJALASOFT", LEMON));
         Assert.assertEquals("TXYP XMUNHCRC", vigenereCrypto.encode("HOLA JALASOFT", LEMON));
         Assert.assertEquals("", vigenereCrypto.encode(null, LEMON));
-        Assert.assertEquals("BCD", vigenereCrypto.encode("ABC","A"));
+        Assert.assertEquals("BCD", vigenereCrypto.encode("ABC", "A"));
     }
 
     /**
@@ -30,7 +30,7 @@ public class VigenereCryptoTest {
         Assert.assertEquals("HOLAJALASOFT", vigenereCrypto.decode("TXYPXMUNHCRC", LEMON));
         Assert.assertEquals("HOLA JALASOFT", vigenereCrypto.decode("TXYP XMUNHCRC", LEMON));
         Assert.assertEquals("", vigenereCrypto.decode(null, LEMON));
-        Assert.assertEquals("BC", vigenereCrypto.decode("CD","A"));
+        Assert.assertEquals("BC", vigenereCrypto.decode("CD", "A"));
 
     }
 }
