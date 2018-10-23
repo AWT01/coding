@@ -23,7 +23,7 @@ public final class BinaryArrayToNumber {
       int i = 0;
       int value = 0;
       while (dim > i) {
-          value += binary.get(i) * (int) (Math.pow(2, dim - i - 1));
+          value += binary.get(i) * (int) (Math.pow(2, dim - i - 1d));
           i++;
       }
       return value;

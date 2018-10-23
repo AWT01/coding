@@ -19,7 +19,7 @@ public class CesarCrypto extends Cypher {
                 if (key > 0) {
                     key -= TWENTY_SIX;
                 } else {
-                    key += TWENTY_SIX;
+                    key += TWENTY_EIGHT;
                 }
         }
         return key;

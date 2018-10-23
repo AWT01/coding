@@ -7,6 +7,7 @@ public abstract class Cypher {
     public static final int NINETY = 90;
     public static final int SIXTY_FOUR = 64;
     public static final int TWENTY_SIX = 26;
+    public static final int TWENTY_EIGHT = 28;
 
     /**
      * encode method.
