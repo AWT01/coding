@@ -65,6 +65,7 @@ public class TestCesarCrypto {
         assertEquals("!23$hola jalasoft!23$", crypto.decode(ENCODE_KEY_STRING, "!23$TXYP XMUNHCRC!23$"));
         assertEquals("", crypto.decode("", ""));
         assertEquals("", crypto.decode("", null));
+        assertEquals("", crypto.decode(null, ""));
         assertEquals("", crypto.decode(null, null));
 
     }
