@@ -3,19 +3,26 @@ package org.fundacionjala.coding.kevincristhian;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
+/**
+ * test.
+ */
 public class CesarCryptoTest {
 
+    /**
+     * encodeVigenere tests.
+     */
     @Test
-    public void encode() {
+    public void encodeVigenere() {
         CesarCrypto cesarCrypto = new CesarCrypto();
-        Assert.assertEquals("TXYPXMUNHCRC", cesarCrypto.encode("HOLAJALASOFT", "LIMON"));
-        Assert.assertEquals("TXYP XMUNHCRC", cesarCrypto.encode("HOLA JALASOFT", "LIMON"));
+        Assert.assertEquals("TXYPXMUNHCRC", cesarCrypto.encodeVigenere("HOLAJALASOFT", "LIMON"));
+        Assert.assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere("HOLA JALASOFT", "LIMON"));
     }
 
+    /**
+     * decode encode cesar tests.
+     */
     @Test
-    public void decode() {
+    public void decodeCesar() {
         CesarCrypto cesarCrypto = new CesarCrypto();
         Assert.assertEquals("HOLA", cesarCrypto.decode("KROD", -3));
         Assert.assertEquals("ZORRO", cesarCrypto.decode("ETWWT", -5));
@@ -27,10 +34,13 @@ public class CesarCryptoTest {
         Assert.assertEquals("", cesarCrypto.decode(null, 3));
     }
 
+    /**
+     * decode vigenere tests.
+     */
     @Test
-    public void decodeVige() {
+    public void decodeVigenere() {
         CesarCrypto cesarCrypto = new CesarCrypto();
-        Assert.assertEquals("HOLAJALASOFT", cesarCrypto.decodeVige("TXYPXMUNHCRC", "LIMON"));
-        Assert.assertEquals("HOLA JALASOFT", cesarCrypto.decodeVige("TXYP XMUNHCRC", "LIMON"));
+        Assert.assertEquals("HOLAJALASOFT", cesarCrypto.decodeVigenere("TXYPXMUNHCRC", "LIMON"));
+        Assert.assertEquals("HOLA JALASOFT", cesarCrypto.decodeVigenere("TXYP XMUNHCRC", "LIMON"));
     }
 }

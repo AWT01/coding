@@ -29,7 +29,7 @@ public class CesarCrypto {
 
     /**
      * create the key sentence with the key word.
-     * @param message message to encode.
+     * @param message message to encodeVigenere.
      * @param key word.
      * @return string.
      */
@@ -53,12 +53,12 @@ public class CesarCrypto {
     }
 
     /**
-     * encode vigenere.
-     * @param message message to encode.
+     * encodeVigenere vigenere.
+     * @param message message to encodeVigenere.
      * @param keyWord word.
      * @return string.
      */
-    public String encode(final String message, final String keyWord) {
+    public String encodeVigenere(final String message, final String keyWord) {
         String newMessage = "";
         if (message != null) {
             int size = message.length();
@@ -86,7 +86,7 @@ public class CesarCrypto {
      * @param keyWord key word.
      * @return string
      */
-    public String decodeVige(final String message, final String keyWord) {
+    public String decodeVigenere(final String message, final String keyWord) {
         String newMessage = "";
         if (message != null) {
             int size = message.length();
@@ -108,7 +108,7 @@ public class CesarCrypto {
         return newMessage;
     }
     /**
-     * decode cesar (it can be used to encode too).
+     * decode cesar (it can be used to encodeVigenere too).
      * @param message message to decode.
      * @param key key to decode.
      * @return string.
