@@ -77,7 +77,7 @@ public class VigenereCrypto extends Cypher {
                 if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
                     newChar = (char) (message.charAt(i) - newKeyWord.charAt(i) + SIXTY_FOUR);
                     if (newChar < 'A') {
-                        newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
+                        newChar = (char) (newChar + NINETY - SIXTY_FOUR);
                     }
                 } else {
                     newChar = message.charAt(i);
