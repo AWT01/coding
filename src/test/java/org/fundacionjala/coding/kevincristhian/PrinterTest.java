@@ -4,13 +4,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * tests.
+ */
 public class PrinterTest {
 
+    /**
+     * method to test.
+     */
     @Test
     public void printerError() {
-        System.out.println("printerError Fixed Tests");
-        String s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
-        System.out.println(Printer.printerError(s));
+        String s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
         assertEquals("3/56", Printer.printerError(s));
 
     }

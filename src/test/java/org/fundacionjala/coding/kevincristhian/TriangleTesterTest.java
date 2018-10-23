@@ -4,8 +4,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * tests.
+ */
 public class TriangleTesterTest {
 
+    /**
+     * method to test.
+     */
     @Test
     public void isTriangle() {
         assertEquals(TriangleTester.isTriangle(1,2,2), true);

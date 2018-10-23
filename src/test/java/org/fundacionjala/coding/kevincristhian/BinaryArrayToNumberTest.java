@@ -7,16 +7,20 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+/**
+ * tests.
+ */
 public class BinaryArrayToNumberTest {
 
+    /**
+     * method to test.
+     */
     @Test
     public void convertBinaryArrayToInt() {
-        //System.out.println(BinaryArrayToNumber.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,0,0,1))));
-
-        assertEquals(1, BinaryArrayToNumber.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,0,0,1))));
-        assertEquals(15, BinaryArrayToNumber.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,1,1,1))));
-        assertEquals(6, BinaryArrayToNumber.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,1,1,0))));
-        assertEquals(9, BinaryArrayToNumber.ConvertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,0,0,1))));
+        assertEquals(1, BinaryArrayToNumber.convertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,0,0,1))));
+        assertEquals(15, BinaryArrayToNumber.convertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,1,1,1))));
+        assertEquals(6, BinaryArrayToNumber.convertBinaryArrayToInt(new ArrayList<>(Arrays.asList(0,1,1,0))));
+        assertEquals(9, BinaryArrayToNumber.convertBinaryArrayToInt(new ArrayList<>(Arrays.asList(1,0,0,1))));
 
     }
 }
