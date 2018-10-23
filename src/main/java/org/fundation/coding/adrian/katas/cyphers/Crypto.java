@@ -3,9 +3,13 @@ package org.fundation.coding.adrian.katas.cyphers;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Father abstract class for cyphers.
+ */
 public abstract class Crypto {
     /**
-     * Abstract father class crypto.
+     * Get valid values.
+     * @return the list of valid values
      */
     protected List<Character> getValidValues() {
         List<Character> myList = new ArrayList<>();
@@ -14,7 +18,21 @@ public abstract class Crypto {
         }
         return myList;
     }
+
+    /**
+     * Method for coding a text.
+     * @param text to code
+     * @param key to code
+     * @return the new text
+     */
     public abstract String encode(String text, String key);
+
+    /**
+     * Method for decoding.
+     * @param text the coded text
+     * @param key the key
+     * @return the original text
+     */
     public abstract String decode(String text, String key);
 
 }

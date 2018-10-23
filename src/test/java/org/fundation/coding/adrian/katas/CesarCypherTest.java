@@ -4,7 +4,13 @@ import org.fundation.coding.adrian.katas.cyphers.CesarCrypto;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Cesar cypher.
+ */
 public class CesarCypherTest {
+    /**
+     * test1.
+     */
     @Test
     public void test1() {
         CesarCrypto cesarCrypto = new CesarCrypto();
@@ -13,6 +19,10 @@ public class CesarCypherTest {
         // System.out.println(to);
         //System.out.println(cesarCrypto.decode(to, -1));
     }
+
+    /**
+     * test2.
+     */
     @Test
     public void test2() {
         CesarCrypto cesarCrypto = new CesarCrypto();
