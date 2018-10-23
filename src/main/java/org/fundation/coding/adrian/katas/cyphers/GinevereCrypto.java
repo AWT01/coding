@@ -1,22 +1,15 @@
 package org.fundation.coding.adrian.katas.cyphers;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Ginevere Crypto
  */
-public final class GinevereCrypto {
+public final class GinevereCrypto extends Crypto {
+    private List<Character> myList = getValidValues();
 
-    private List<Character> myList = new ArrayList<>();
-
-    public GinevereCrypto() {
-        for (int i = 'a'; i <= 'z'; i++) {
-            myList.add((char) i);
-        }
-    }
-
+    @Override
     public String encode(String text, String key) {
         StringBuilder result = new StringBuilder();
         int keyStep =  0;
@@ -35,20 +28,16 @@ public final class GinevereCrypto {
             } else {
                 result.append((text.charAt(i)));
             }
-
-
         }
-
         return result.toString();
     }
 
+    @Override
     public String decode(String text, String key) {
         StringBuilder reverseKey = new StringBuilder();
         for (int i = 0; i<key.length(); i++){
-        reverseKey.append(myList.get(myList.size() - (key.charAt(i)-'a'+2)));
+            reverseKey.append(myList.get(myList.size() - (key.charAt(i)-'a'+2)));
         }
         return encode(text,reverseKey.toString());
     }
-
 }
-
