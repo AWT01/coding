@@ -7,13 +7,14 @@ import org.junit.Test;
 /**
  * .
  */
-public class CharSroterTest {
+public class CharSorterTest {
     /**
      * .
      */
     @Test
     public void exampleTests() {
-        Assert.assertEquals("srot the inner ctonnet in dsnnieedcg oredr", CharSorter.sortTheInnerContent("sort the inner content in descending order"));
+        Assert.assertEquals("srot the inner ctonnet in dsnnieedcg oredr",
+                CharSorter.sortTheInnerContent("sort the inner content in descending order"));
     }
 
     /**

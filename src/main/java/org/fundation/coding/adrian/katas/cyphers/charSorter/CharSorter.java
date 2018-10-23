@@ -3,13 +3,20 @@ package org.fundation.coding.adrian.katas.cyphers.charSorter;
 /**
  * .
  */
-public class CharSorter {
+public final class CharSorter {
+    /**
+     * Constructor.
+     */
+    private CharSorter() {
+
+    }
+
     /**
      * .
      * @param words to scramble
      * @return words scrambled
      */
-    public static String sortTheInnerContent(String words) {
+    public static String sortTheInnerContent(final String words) {
         StringBuilder toSort = new StringBuilder();
         String[] elements = words.split(" ");
         for (int i = 0; i < elements.length; i++) {
@@ -25,7 +32,7 @@ public class CharSorter {
      * @param word to
      * @return to
      */
-    public static String sortWord(String word) {
+    public static String sortWord(final String word) {
         StringBuilder toSort;
         toSort = new StringBuilder(word);
         for (int i = 1; i < word.length() - 1; i++) {
