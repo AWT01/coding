@@ -15,8 +15,8 @@
 package org.fundation.coding.adrian;
 
 
-import org.fundation.coding.adrian.movie.NewReleaseMovie;
-import org.fundation.coding.adrian.movie.RegularMovie;
+import org.fundation.coding.adrian.katas.cyphers.CesarCrypto;
+import org.fundation.coding.adrian.katas.cyphers.GinevereCrypto;
 
 /**
  * Main class for testing.
@@ -33,10 +33,7 @@ class Main {
      * @param args args of main
      */
     public static void main(final String[] args) {
-        Customer customer = new Customer("Test");
-        customer.addRental(new Rental(new NewReleaseMovie("The Revenant"), 2));
-        customer.addRental(new Rental(new RegularMovie("Terminator"), 2));
-        customer.statement();
+
 
     }
 }
