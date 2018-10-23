@@ -36,7 +36,7 @@ public class CesarCrypto {
     private String createKeyString(final String message, final String key) {
         int posKey = 0;
         int sizeKey = key.length() - 1;
-        StringBuffer newKey = new StringBuffer();
+        StringBuilder newKey = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
             if (message.charAt(i) != ' ') {
                 newKey.append(key.charAt(posKey));
@@ -59,7 +59,7 @@ public class CesarCrypto {
      * @return string.
      */
     public String encodeVigenere(final String message, final String keyWord) {
-        StringBuffer newMessage = new StringBuffer();
+        StringBuilder newMessage = new StringBuilder();
         if (message != null) {
             int size = message.length();
             String newKeyWord;
@@ -87,7 +87,7 @@ public class CesarCrypto {
      * @return string
      */
     public String decodeVigenere(final String message, final String keyWord) {
-        StringBuffer newMessage = new StringBuffer();
+        StringBuilder newMessage = new StringBuilder();
         if (message != null) {
             int size = message.length();
             String newKeyWord;
@@ -114,7 +114,7 @@ public class CesarCrypto {
      * @return string.
      */
     public String decode(final String message, int key) {
-        StringBuffer newMessage = new StringBuffer();
+        StringBuilder newMessage = new StringBuilder();
         key = verifyKey(key);
         char newChar;
         if (message != null) {
