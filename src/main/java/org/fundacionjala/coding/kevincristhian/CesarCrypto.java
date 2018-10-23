@@ -117,23 +117,25 @@ public class CesarCrypto {
         StringBuilder newMessage = new StringBuilder();
         key = verifyKey(key);
         char newChar;
-        if (message != null) {
-            int size = message.length();
-            for (int i = 0; i < size; i++) {
-                if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
-                    newChar = (char) (message.charAt(i) + key);
-                    if (newChar > 'Z') {
-                        newChar = (char) ((newChar - NINETY) + SIXTY_FOUR);
-                    }
-                    if (newChar < 'A') {
-                        newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
-                    }
+        if (message == null) {
+            return newMessage.toString();
+        }
+        int size = message.length();
+        for (int i = 0; i < size; i++) {
+            if (message.charAt(i) >= 'A' && message.charAt(i) <= 'Z') {
+                newChar = (char) (message.charAt(i) + key);
+                if (newChar > 'Z') {
+                    newChar = (char) ((newChar - NINETY) + SIXTY_FOUR);
+                }
+                if (newChar < 'A') {
+                    newChar = (char) ((newChar + NINETY) - SIXTY_FOUR);
+                }
                 } else {
                     newChar = message.charAt(i);
                 }
                 newMessage.append(newChar);
             }
-        }
+
         return newMessage.toString();
     }
 }
