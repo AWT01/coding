@@ -48,7 +48,7 @@ public class CesarCrypto extends Cypher {
                 if (newChar < 'A') {
                     newChar = (char) (newChar + NINETY - SIXTY_FOUR);
                 }
-                } else {
+            } else {
                     newChar = message.charAt(i);
                 }
                 newMessage.append(newChar);

@@ -31,6 +31,8 @@ public class CesarCryptoTest {
         Assert.assertEquals("N", cesarCrypto.decode("Z", FORTY));
         Assert.assertEquals("N", cesarCrypto.decode("Z", NEGATIVE_FORTY));
         Assert.assertEquals("A", cesarCrypto.decode("Z", ONE));
+        Assert.assertEquals("a", cesarCrypto.decode("a", ONE));
+        Assert.assertEquals("!", cesarCrypto.decode("!", ONE));
     }
 
     /**
