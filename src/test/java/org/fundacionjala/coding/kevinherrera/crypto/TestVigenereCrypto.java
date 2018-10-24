@@ -16,7 +16,7 @@ public class TestVigenereCrypto {
      * instance class VigenereCrypto before start test.
      */
     @Before
-    public void SetUp() {
+    public void setUp() {
         crypto = new VigenereCrypto();
     }
 

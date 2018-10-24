@@ -18,7 +18,7 @@ public class TestCesarCrypto {
      * instance class NormalCrypto before start test.
      */
     @Before
-    public void SetUp() {
+    public void setUp() {
         crypto = new NormalCrypto();
     }
 

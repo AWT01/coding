@@ -19,7 +19,7 @@ public abstract class CesarCrypto {
      * @param key key to encode
      * @return message encoded
      */
-    protected String encode(String message, int key) {
+    protected String encode(final String message, final int key) {
         return null;
     }
 
@@ -29,7 +29,7 @@ public abstract class CesarCrypto {
      * @param encodeMessage message to decode
      * @return message as lowercase type decoded
      */
-    protected String decode(int key, String encodeMessage) {
+    protected String decode(final int key, final String encodeMessage) {
         return null;
     }
 
@@ -40,7 +40,7 @@ public abstract class CesarCrypto {
      * @param key key string to encode
      * @return message encoded
      */
-    protected String encode(String message, String key) {
+    protected String encode(final String message, final String key) {
         return null;
     }
 
@@ -50,7 +50,7 @@ public abstract class CesarCrypto {
      * @param encodeMessage message to decode
      * @return message decoded
      */
-    protected String decode(String key, String encodeMessage) {
+    protected String decode(final String key, final String encodeMessage) {
         return null;
     }
 
