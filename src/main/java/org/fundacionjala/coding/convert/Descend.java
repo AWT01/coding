@@ -65,16 +65,14 @@ public class Descend {
       newWord.add(cFirst.toString());
       int index = word.length();
       Character cLast = word.charAt(index-1);
-      Character beforeCharacter = '\0';
-      Character afterCharacter = '\0';
 
       if(index >= 2){
         for(int i= 1; i < word.length()-2; i++ )
         {
-          beforeCharacter = word.charAt(i+1);
+          Character beforeCharacter = word.charAt(i+1);
           newWord.add(beforeCharacter.toString());
 
-          afterCharacter = word.charAt(i);
+          Character afterCharacter = word.charAt(i);
           newWord.add(afterCharacter.toString());
         }
         newWord.add(cLast.toString());

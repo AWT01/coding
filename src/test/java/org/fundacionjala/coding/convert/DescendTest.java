@@ -32,7 +32,6 @@ public class DescendTest {
     descend.sortTheInnerContent();
 
     String textExpected = "wiat for me ";
-    System.out.println(descend.getResult());
     Assert.assertEquals(textExpected,descend.getResult());
   }
 
