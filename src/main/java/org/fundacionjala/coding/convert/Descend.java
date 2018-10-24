@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.Convert;
+package org.fundacionjala.coding.convert;
 
 /**
  * This class help to order the content.
@@ -7,6 +7,7 @@ package org.fundacionjala.coding.Convert;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.StringJoiner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -31,7 +32,6 @@ public class Descend {
    */
   private List<String> inputWords(){
     resultList = Stream.of(this.text.split(" "))
-        .map (elem -> new String(elem))
         .collect(Collectors.toList());
     return  resultList;
   }
@@ -39,28 +39,46 @@ public class Descend {
   /**
    * call to convertor.
    */
-  public void sortedWordsDescend() {
+  public void sortTheInnerContent() {
     resultList = inputWords();
     StringBuilder words = new StringBuilder();
     for (String word : resultList) {
-      CharacterConvertor convert = new CharacterConvertor(word);
-      words.append(convert.changeOrder());
+      words.append(changeOrder(word));
       words.append(" ");
     }
-    showMessageDescend(words);
-  }
-
-  /**
-   * Show the text converted.
-   */
-  private void showMessageDescend(StringBuilder words)
-  {
     this.result = words.toString();
-    System.out.println(words.toString());
   }
 
   public String getResult() {
     return result;
   }
-}
 
+  /**
+   * change the word.
+   * @param word origin.
+   * @return word order descending.
+   */
+    public String changeOrder(String word){
+      StringJoiner newWord = new StringJoiner("");
+      char[] characters = word.toCharArray();
+      Character cFirst = characters[0];
+      newWord.add(cFirst.toString());
+      int index = word.length();
+      Character cLast = word.charAt(index-1);
+      Character beforeCharacter = '\0';
+      Character afterCharacter = '\0';
+
+      if(index >= 2){
+        for(int i= 1; i < word.length()-2; i++ )
+        {
+          beforeCharacter = word.charAt(i+1);
+          newWord.add(beforeCharacter.toString());
+
+          afterCharacter = word.charAt(i);
+          newWord.add(afterCharacter.toString());
+        }
+        newWord.add(cLast.toString());
+      }
+      return newWord.toString();
+    }
+}

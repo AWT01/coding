@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.Convert;
+package org.fundacionjala.coding.convert;
 import org.junit.Assert;
 
 /**
@@ -15,7 +15,7 @@ public class DescendTest {
 
     String text = "this kata is easy";
     Descend descend = new Descend(text);
-    descend.sortedWordsDescend();
+    descend.sortTheInnerContent();
 
     String textExpected = "tihs ktaa is esay ";
     Assert.assertEquals(textExpected,descend.getResult());
@@ -29,10 +29,24 @@ public class DescendTest {
 
     String text = "wait for me";
     Descend descend = new Descend(text);
-    descend.sortedWordsDescend();
+    descend.sortTheInnerContent();
 
     String textExpected = "wiat for me ";
+    System.out.println(descend.getResult());
+    Assert.assertEquals(textExpected,descend.getResult());
+  }
+
+  /**
+   * test 3.
+   */
+  @org.junit.Test
+  public void sortedWordsDescend3() {
+
+    String text = "I am";
+    Descend descend = new Descend(text);
+    descend.sortTheInnerContent();
+
+    String textExpected = "I am ";
     Assert.assertEquals(textExpected,descend.getResult());
   }
 }
-
