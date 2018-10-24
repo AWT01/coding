@@ -18,6 +18,6 @@ public class SrotTest {
                 Srot.sortTheInnerContent("sort the inner content in descending order"));
         assertEquals("wiat for me", Srot.sortTheInnerContent("wait for me"));
         assertEquals("tihs ktaa is esay", Srot.sortTheInnerContent("this kata is easy"));
-
+        assertEquals("I am", Srot.sortTheInnerContent("I am"));
     }
 }

@@ -3,6 +3,7 @@ package org.fundacionjala.coding.kevincristhian;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * sort class.
@@ -34,8 +35,7 @@ public final class Srot {
             newString.append(list.get(ini));
             ini--;
         }
-        return new StringBuilder().append(word.charAt(0)).append(newString
-                .append(word.charAt(end)).toString()).toString();
+        return word.charAt(0) + newString.toString() + word.charAt(end);
     }
 
     /**
@@ -45,12 +45,17 @@ public final class Srot {
      */
     public static String sortTheInnerContent(final String words) {
         String[] phrase = words.split(" ");
-        StringBuilder newPhrase = new StringBuilder();
-        for (String string :phrase) {
-           newPhrase.append(sort(string));
-           newPhrase.append(" ");
+        String newPhrase;
+        StringJoiner stringJoiner = new StringJoiner(" ");
+        for (String word :phrase) {
+            if (word.length() > 1) {
+                stringJoiner.add(sort(word));
+            } else {
+                stringJoiner.add(word);
+            }
         }
-        return newPhrase.substring(0, newPhrase.length() - 1);
+        newPhrase = stringJoiner.toString();
+        return newPhrase;
     }
 }
 
