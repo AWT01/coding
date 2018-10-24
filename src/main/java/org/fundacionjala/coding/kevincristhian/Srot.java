@@ -8,6 +8,9 @@ import java.util.List;
  * sort class.
  */
 public class Srot {
+
+    private Srot() {
+    }
     /**
      * sort method.
      * @param word to order.
@@ -37,8 +40,7 @@ public class Srot {
      * @param words phrase.
      * @return string.
      */
-    public static String sortTheInnerContent(String words)
-    {
+    public static String sortTheInnerContent(String words) {
         String[] phrase = words.split(" ");
         StringBuilder newPhrase = new StringBuilder();
         for (String string :phrase) {
@@ -48,3 +50,4 @@ public class Srot {
         return newPhrase.substring(0, newPhrase.length() - 1);
     }
 }
+
