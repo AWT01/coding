@@ -9,6 +9,9 @@ import java.util.List;
  */
 public class Srot {
 
+    /**
+     * constructor.
+     */
     private Srot() {
     }
     /**
