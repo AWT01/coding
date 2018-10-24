@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * sort class.
  */
-public class Srot {
+public final class Srot {
 
     /**
      * constructor.
