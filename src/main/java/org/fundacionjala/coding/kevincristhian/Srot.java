@@ -40,7 +40,7 @@ public class Srot {
      * @param words phrase.
      * @return string.
      */
-    public static String sortTheInnerContent(String words) {
+    public static String sortTheInnerContent(final String words) {
         String[] phrase = words.split(" ");
         StringBuilder newPhrase = new StringBuilder();
         for (String string :phrase) {
