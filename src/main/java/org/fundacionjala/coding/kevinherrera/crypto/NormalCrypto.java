@@ -3,7 +3,7 @@ package org.fundacionjala.coding.kevinherrera.crypto;
 /**
  * class that process a normal encrypt method.
  */
-public class NormalCrypto extends CesarCrypto implements INormalCypher {
+public class NormalCrypto extends CesarCrypto {
 
     /**
      * codifies the alphabetic values of a message using a key.
@@ -13,6 +13,7 @@ public class NormalCrypto extends CesarCrypto implements INormalCypher {
      */
     @Override
     public String encode(final String message, final int key) {
+        super.encode(message, key);
         return encryptTask(EncryptTask.ENCODE, message, key);
     }
 
@@ -24,6 +25,7 @@ public class NormalCrypto extends CesarCrypto implements INormalCypher {
      */
     @Override
     public String decode(final int key, final String encodeMessage) {
+        super.decode(key, encodeMessage);
         return encryptTask(EncryptTask.DECODE, encodeMessage, key).toLowerCase();
     }
 

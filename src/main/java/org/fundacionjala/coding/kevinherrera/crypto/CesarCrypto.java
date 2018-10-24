@@ -14,11 +14,52 @@ public abstract class CesarCrypto {
     enum EncryptTask { ENCODE, DECODE }
 
     /**
+     * encode a message using a Integer key.
+     * @param message message to encode
+     * @param key key to encode
+     * @return message encoded
+     */
+    protected String encode(String message, int key) {
+        return null;
+    }
+
+    /**
+     * decode a message using a Integer key.
+     * @param key key to decode
+     * @param encodeMessage message to decode
+     * @return message as lowercase type decoded
+     */
+    protected String decode(int key, String encodeMessage) {
+        return null;
+    }
+
+
+    /**
+     * encode a message using a String key.
+     * @param message message to encode
+     * @param key key string to encode
+     * @return message encoded
+     */
+    protected String encode(String message, String key) {
+        return null;
+    }
+
+    /**
+     * decode a message using a String key.
+     * @param key key string to decode
+     * @param encodeMessage message to decode
+     * @return message decoded
+     */
+    protected String decode(String key, String encodeMessage) {
+        return null;
+    }
+
+    /**
      * encode a character using his hashcode value and a key.
      * @param task determinate if the character should be encode or decode
      * @param c character to transform
      * @param key key for the encrypt task
-     * @return a char array with the encrypted character
+     * @return a new char encrypted
      */
     protected char[] encryptChar(final EncryptTask task, final char c, final int key) {
         int charHash = Character.hashCode(Character.toUpperCase(c));

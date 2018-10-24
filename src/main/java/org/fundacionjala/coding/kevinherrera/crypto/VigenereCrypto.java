@@ -3,7 +3,7 @@ package org.fundacionjala.coding.kevinherrera.crypto;
 /**
  * class that process a vigenere encrypt method.
  */
-public class VigenereCrypto extends CesarCrypto implements IVigenereCypher {
+public class VigenereCrypto extends CesarCrypto {
 
     /**
      * encode the alphabetic values of a message using vigenere method.
@@ -13,18 +13,20 @@ public class VigenereCrypto extends CesarCrypto implements IVigenereCypher {
      */
     @Override
     public String encode(final String message, final String key) {
+        super.encode(message, key);
         return encryptTask(EncryptTask.ENCODE, message, key);
     }
 
     /**
      * decode the alphabetic values of a message encoded with vigenere key.
-     * @param message message to decode
+     * @param encodeMessage message to decode
      * @param key key to decode
      * @return message as lowercase type decoded
      */
     @Override
-    public String decode(final String key, final String message) {
-        return encryptTask(EncryptTask.DECODE, message, key).toLowerCase();
+    public String decode(final String key, final String encodeMessage) {
+        super.decode(key, encodeMessage);
+        return encryptTask(EncryptTask.DECODE, encodeMessage, key).toLowerCase();
     }
 
 
