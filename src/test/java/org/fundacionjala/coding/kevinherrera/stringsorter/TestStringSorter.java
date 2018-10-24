@@ -1,6 +1,5 @@
 package org.fundacionjala.coding.kevinherrera.stringsorter;
 
-import org.fundacionjala.coding.kevinherrera.stringsorter.StringSorter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class TestStringSorter {
 
     /**
-     *
+     * test sortInner method.
      */
     @Test
     public void testSort() {
