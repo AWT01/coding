@@ -18,7 +18,7 @@ public class DescendTest {
     descend.sortTheInnerContent();
 
     String textExpected = "tihs ktaa is esay ";
-    Assert.assertEquals(textExpected,descend.getResult());
+    Assert.assertEquals(textExpected, descend.getResult());
   }
 
   /**
@@ -32,7 +32,7 @@ public class DescendTest {
     descend.sortTheInnerContent();
 
     String textExpected = "wiat for me ";
-    Assert.assertEquals(textExpected,descend.getResult());
+    Assert.assertEquals(textExpected, descend.getResult());
   }
 
   /**
@@ -46,7 +46,7 @@ public class DescendTest {
     descend.sortTheInnerContent();
 
     String textExpected = "I am ";
-    Assert.assertEquals(textExpected,descend.getResult());
+    Assert.assertEquals(textExpected, descend.getResult());
   }
 
   /**
@@ -60,6 +60,6 @@ public class DescendTest {
     descend.sortTheInnerContent();
 
     String textExpected = "for ";
-    Assert.assertEquals(textExpected,descend.getResult());
+    Assert.assertEquals(textExpected, descend.getResult());
   }
 }
