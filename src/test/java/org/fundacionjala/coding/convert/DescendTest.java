@@ -48,4 +48,18 @@ public class DescendTest {
     String textExpected = "I am ";
     Assert.assertEquals(textExpected,descend.getResult());
   }
+
+  /**
+   * test 4.
+   */
+  @org.junit.Test
+  public void sortedWordsDescend4() {
+
+    String text = "for";
+    Descend descend = new Descend(text);
+    descend.sortTheInnerContent();
+
+    String textExpected = "for ";
+    Assert.assertEquals(textExpected,descend.getResult());
+  }
 }

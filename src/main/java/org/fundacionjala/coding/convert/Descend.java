@@ -77,6 +77,12 @@ public class Descend {
         }
         newWord.add(cLast.toString());
       }
+
+      if (index == 3){
+        newWord = new StringJoiner("");
+        newWord.add(word);
+      }
+
       return newWord.toString();
     }
 }
