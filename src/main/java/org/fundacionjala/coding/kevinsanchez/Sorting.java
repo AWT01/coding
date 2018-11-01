@@ -14,7 +14,7 @@ public class Sorting {
      * @param replace nuber to replace.
      * @return integer.
      */
-    private Integer covert(Integer digit, String target, String replace) {
+    private Integer covert(final Integer digit, final String target, final String replace) {
         return Integer.parseInt(digit.toString().replace(target, replace));
     }
 
@@ -23,7 +23,7 @@ public class Sorting {
      * @param array .
      * @return list.
      */
-    private List changeDigits(Integer[] array) {
+    private List changeDigits(final Integer[] array) {
         List<Integer> newArray = new ArrayList<>();
         for (Integer digit : array) {
             if (digit.toString().contains("3")) {
@@ -42,7 +42,7 @@ public class Sorting {
      * @param newArray list.
      * @return Integer[].
      */
-    private Integer[] convertList(List<Integer> newArray) {
+    private Integer[] convertList(final List<Integer> newArray) {
         Integer[] otherArray = new Integer[newArray.size()];
         for (int i=0; i<otherArray.length; i++) {
             otherArray[i] = newArray.get(i);
@@ -55,7 +55,7 @@ public class Sorting {
      * @param array .
      * @return list.
      */
-    public Integer[] sortTwisted37(Integer[] array) {
+    public Integer[] sortTwisted37(final Integer[] array) {
         List<Integer> newArray = new ArrayList<>();
         newArray = changeDigits(array);
         newArray.sort(Comparator.naturalOrder());
