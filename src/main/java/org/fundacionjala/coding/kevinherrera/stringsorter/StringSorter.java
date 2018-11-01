@@ -8,6 +8,8 @@ import java.util.Arrays;
  */
 public class StringSorter {
 
+    public static final int INT_4 = 4;
+
     /**
      * sort inner letter of each word on a string.
      * @param stringToSort string to sort
@@ -19,15 +21,19 @@ public class StringSorter {
             return builder.toString();
         }
         String[] strings = stringToSort.split(" ");
-        int index = 0;
         for (String c : strings) {
+            if (c.length() < INT_4) {
+                builder.append(c);
+                builder.append(" ");
+                continue;
+            }
             char[] charArray = c.toCharArray();
             Arrays.sort(charArray, 1, charArray.length - 1);
             builder.append(inverseInnerAppend(charArray));
-            if (index < strings.length - 1) {
-                builder.append(" ");
-            }
-            index++;
+            builder.append(" ");
+        }
+        if (builder.charAt(builder.length() - 1) == ' ') {
+            builder.deleteCharAt(builder.length() - 1);
         }
         return builder.toString();
     }

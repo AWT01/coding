@@ -19,6 +19,7 @@ public class TestStringSorter {
         assertEquals("wiat for me", sorter.sortInner("wait for me"));
         assertEquals("tihs ktaa is esay", sorter.sortInner("this kata is easy"));
         assertEquals("jsolfaat", sorter.sortInner("jalasoft "));
+        assertEquals("I am", sorter.sortInner("I am "));
         assertEquals("", sorter.sortInner(null));
     }
 }
