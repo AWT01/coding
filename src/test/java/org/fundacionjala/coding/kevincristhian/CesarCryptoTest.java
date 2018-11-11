@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.kevincristhian;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -17,13 +18,21 @@ public class CesarCryptoTest {
     private static final String ONE = "1";
     private static final String FORTY = "40";
     private static final String NEGATIVE_FORTY = "-40";
+    private CesarCrypto cesarCrypto;
+
+    /**
+     * instace of the class.
+     */
+    @Before
+    public void setUp() {
+        cesarCrypto = new CesarCrypto();
+    }
 
     /**
      * decode encode cesar tests.
      */
     @Test
     public void decode() {
-        CesarCrypto cesarCrypto = new CesarCrypto();
         Assert.assertEquals(FOX, cesarCrypto.decode("ETWWT", NEGATIVE_FIVE));
         Assert.assertEquals("", cesarCrypto.decode("", THREE));
         Assert.assertEquals("KROD", cesarCrypto.decode("HOLA", THREE));
@@ -40,7 +49,6 @@ public class CesarCryptoTest {
      */
     @Test
     public void encode() {
-        CesarCrypto cesarCrypto = new CesarCrypto();
         Assert.assertEquals("HOLA", cesarCrypto.encode("KROD", NEGATIVE_THREE));
         Assert.assertEquals("HOL A", cesarCrypto.encode("HOL A", ZERO));
         Assert.assertEquals(FOX, cesarCrypto.encode(FOX, FIFTY_TWO));
