@@ -8,7 +8,6 @@ import java.util.StringJoiner;
  * sort class.
  */
 public final class Srot {
-    private final static int THREE = 3;
 
     /**
      * constructor.
@@ -37,6 +36,7 @@ public final class Srot {
         String[] phrase = words.split(" ");
         StringJoiner stringJoiner = new StringJoiner(" ");
         for (String word : phrase) {
+            int THREE = 3;
             stringJoiner.add(word.length() > THREE ? sort(word) : word);
         }
         return stringJoiner.toString();
