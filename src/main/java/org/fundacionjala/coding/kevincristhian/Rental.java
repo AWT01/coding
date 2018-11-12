@@ -11,6 +11,8 @@ public abstract class Rental {
 
     /**
      * constructor of rental class.
+     * @param movie .
+     * @param daysRented .
      */
     public Rental(final Movie movie, int daysRented) {
         this.movie = movie;

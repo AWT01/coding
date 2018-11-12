@@ -7,10 +7,10 @@ public class RentalNew extends Rental {
     /**
      * constructor of rental class.
      *
-     * @param movie
-     * @param daysRented
+     * @param movie .
+     * @param daysRented .
      */
-    public RentalNew(Movie movie, int daysRented) {
+    public RentalNew(final Movie movie, int daysRented) {
         super(movie, daysRented);
     }
 

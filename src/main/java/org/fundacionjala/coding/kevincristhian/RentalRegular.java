@@ -10,10 +10,10 @@ public class RentalRegular extends Rental {
     /**
      * constructor of rental class.
      *
-     * @param movie
-     * @param daysRented
+     * @param movie .
+     * @param daysRented .
      */
-    public RentalRegular(Movie movie, int daysRented) {
+    public RentalRegular(final Movie movie, int daysRented) {
         super(movie, daysRented);
     }
 
