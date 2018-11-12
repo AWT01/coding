@@ -36,7 +36,7 @@ public class NormalCrypto extends CesarCrypto {
      */
     @Override
     protected String encryptTask(final EncryptTask task, final String message, final String key) {
-        int keyAsInteger = Integer.valueOf(key);
+        int keyAsInteger = Integer.parseInt(key);
         StringBuilder messageBuilder = new StringBuilder();
         if (message == null) {
             return messageBuilder.toString();

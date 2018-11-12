@@ -19,7 +19,7 @@ public abstract class CesarCrypto {
      * @param key key to encode
      * @return message encoded
      */
-    protected abstract String encode(final String message, final String key);
+    protected abstract String encode(String message, String key);
 
     /**
      * decode a message using a Integer key.
@@ -27,7 +27,7 @@ public abstract class CesarCrypto {
      * @param encodeMessage message to decode
      * @return message as lowercase type decoded
      */
-    protected abstract String decode(final String key, final String encodeMessage);
+    protected abstract String decode(String key, String encodeMessage);
 
     /**
      * internal process of encryptTask functions.
@@ -36,7 +36,7 @@ public abstract class CesarCrypto {
      * @param key codification key
      * @return message encrypted or decrypted determinated by task value
      */
-    protected abstract String encryptTask(final EncryptTask task, final String message, final String key);
+    protected abstract String encryptTask(EncryptTask task, String message, String key);
 
     /**
      * encode a character using his hashcode value and a key.
