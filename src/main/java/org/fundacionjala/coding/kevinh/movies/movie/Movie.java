@@ -44,23 +44,7 @@ public abstract class Movie {
      * .
      * @return value
      */
-    public String priceCodeToString() {
-        String codeString = "";
-        switch (priceCode) {
-            case 0:
-                codeString = "REGULAR";
-                break;
-            case 1:
-                codeString = "NEW RELEASE";
-                break;
-            case 2:
-                codeString = "CHILDREN";
-                break;
-            default:
-                break;
-        }
-        return codeString;
-    }
+    public abstract String priceCodeToString();
 
     /**
      * .

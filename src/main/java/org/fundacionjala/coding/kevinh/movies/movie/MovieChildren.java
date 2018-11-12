@@ -16,6 +16,11 @@ public class MovieChildren extends Movie {
     }
 
     @Override
+    public String priceCodeToString() {
+        return "CHILDREN";
+    }
+
+    @Override
     public double getRentCost(int daysRented) {
         return daysRented * NORMAL_MOVIE_PRICE;
     }

@@ -9,9 +9,6 @@ import org.fundacionjala.coding.kevinh.movies.movie.Movie;
 public class RentalMovie {
     private Movie movie;
     private int daysRented;
-    static final double NORMAL_MOVIE_PRICE = 1.5;
-    static final double NEW_RELEASE_MOVIE_PRICE = 3;
-    static final double REGULAR2DAYSPRICE = 4;
 
     /**
      * .
@@ -44,21 +41,6 @@ public class RentalMovie {
      * @return value
      */
     public double getRentAmount() {
-        double amount = 0;
-        amount = getMovie().getRentCost(daysRented);
-        switch (getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-
-                break;
-            case Movie.NEW_RELEASE:
-                amount = getDaysRented() * NEW_RELEASE_MOVIE_PRICE;
-                break;
-            case Movie.CHILDREN:
-                amount = getDaysRented() * NORMAL_MOVIE_PRICE;
-                break;
-            default:
-                break;
-        }
-        return amount;
+        return getMovie().getRentCost(daysRented);
     }
 }

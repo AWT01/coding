@@ -14,6 +14,11 @@ public class MovieRegular extends Movie {
         super(title, Movie.REGULAR);
     }
 
+    @Override
+    public String priceCodeToString() {
+        return "REGULAR";
+    }
+
     /**
      * .
      * @param daysRented .

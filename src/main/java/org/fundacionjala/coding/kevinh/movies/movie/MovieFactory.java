@@ -4,7 +4,13 @@ package org.fundacionjala.coding.kevinh.movies.movie;
  * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
-public abstract class MovieFactory {
+public final class MovieFactory {
+    /**
+     * .
+     */
+    private MovieFactory() {
+    }
+
     /**
      * .
      * @param title title

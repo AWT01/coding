@@ -13,6 +13,11 @@ public class MovieNewRelease extends Movie {
         super(title, Movie.NEW_RELEASE);
     }
 
+    @Override
+    public String priceCodeToString() {
+        return  "NEW RELEASE";
+    }
+
     /**
      * .
      * @param daysRented .
@@ -22,4 +27,6 @@ public class MovieNewRelease extends Movie {
     public double getRentCost(int daysRented) {
         return daysRented * NEW_RELEASE_MOVIE_PRICE;
     }
+
+
 }
