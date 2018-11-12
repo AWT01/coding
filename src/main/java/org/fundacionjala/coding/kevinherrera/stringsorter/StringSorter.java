@@ -1,6 +1,8 @@
 package org.fundacionjala.coding.kevinherrera.stringsorter;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.StringJoiner;
 
 /**
  * @author KevinHerrera - AWT-[01].
@@ -16,40 +18,20 @@ public class StringSorter {
      * @return string with inner letter of words sorted
      */
     public String sortInner(final String stringToSort) {
-        StringBuilder builder = new StringBuilder();
+        StringJoiner builder = new StringJoiner(" ");
         if (stringToSort == null) {
             return builder.toString();
         }
-        String[] strings = stringToSort.split(" ");
-        for (String c : strings) {
-            if (c.length() < INT_4) {
-                builder.append(c);
-                builder.append(" ");
-                continue;
+        String[] words = stringToSort.split(" ");
+        for (String word : words) {
+            if (word.length() < INT_4) {
+                builder.add(word);
+            } else {
+                String[] charArray = word.split("");
+                Arrays.sort(charArray, 1, charArray.length - 1, Collections.reverseOrder());
+                builder.add(String.join("", charArray));
             }
-            char[] charArray = c.toCharArray();
-            Arrays.sort(charArray, 1, charArray.length - 1);
-            builder.append(inverseInnerAppend(charArray));
-            builder.append(" ");
         }
-        if (builder.charAt(builder.length() - 1) == ' ') {
-            builder.deleteCharAt(builder.length() - 1);
-        }
-        return builder.toString();
-    }
-
-    /**
-     * append a sorted char array in decendent order.
-     * @param charArray sorted char
-     * @return string appended
-     */
-    private String inverseInnerAppend(final char[] charArray) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(charArray[0]);
-        for (int i = charArray.length - 2; i >= 1; i--) {
-            builder.append(charArray[i]);
-        }
-        builder.append(charArray[charArray.length - 1]);
         return builder.toString();
     }
 }
