@@ -1,6 +1,6 @@
-package org.fundacionjala.coding.kevinherrera.movies.rental;
+package org.fundacionjala.coding.kevinh.movies.rental;
 
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
 
 /**
  * @author kevinherrera - AWT-[01].
@@ -8,11 +8,6 @@ import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
  */
 public class RentalFactory {
 
-    /**
-     * .
-     */
-    protected RentalFactory() {
-    }
     /**
      *.
      * @param movie movie

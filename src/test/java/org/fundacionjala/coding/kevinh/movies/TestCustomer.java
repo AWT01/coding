@@ -1,8 +1,8 @@
-package org.fundacionjala.coding.Movies;
+package org.fundacionjala.coding.kevinh.movies;
 
-import org.fundacionjala.coding.kevinherrera.movies.customer.Customer;
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
-import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
+import org.fundacionjala.coding.kevinh.movies.customer.Customer;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.movie.MovieFactory;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -63,7 +63,7 @@ public class TestCustomer {
         customerTest.rentMovie(movie2, DAYS_RENT_1);
         Movie movie3 = MovieFactory.createRegularMovie("Iron Man");
         customerTest.rentMovie(movie3, DAYS_RENT_1);
-        assertEquals("Batman", customerTest.getRentedMoviesList().get(0).getMovie().getTitle());
+        assertEquals(REGULAR_MOVIE_TITLE, customerTest.getRentedMoviesList().get(0).getMovie().getTitle());
         assertEquals("Superman", customerTest.getRentedMoviesList().get(1).getMovie().getTitle());
         assertEquals("Iron Man", customerTest.getRentedMoviesList().get(2).getMovie().getTitle());
     }
@@ -161,16 +161,20 @@ public class TestCustomer {
         Customer customerTest = new Customer("JOSE");
         Movie movieRevenant = MovieFactory.createNewReleaseMovie("The Revenant");
         Movie movieTerminator = MovieFactory.createRegularMovie("Terminator");
+        Movie movieLionKing = MovieFactory.createChildrenMovie("Lion King");
         customerTest.rentMovie(movieRevenant, 2);
         customerTest.rentMovie(movieTerminator, 2);
+        customerTest.rentMovie(movieLionKing, 2);
         String statementExpected = "RentalMovie Record for: JOSE"
                 + System.lineSeparator()
                 + "Title: The Revenant(NEW RELEASE)||\tRent Amount: 6 $||\tDays Rented: 2 day(s)"
                 + System.lineSeparator()
                 + "Title: Terminator(REGULAR)||\tRent Amount: 4 $||\tDays Rented: 2 day(s)"
                 + System.lineSeparator()
-                + "Amount owned is 10$" + System.lineSeparator()
-                + "You earned:3 frequent renter points";
+                + "Title: Lion King(CHILDREN)||\tRent Amount: 3 $||\tDays Rented: 2 day(s)"
+                + System.lineSeparator()
+                + "Amount owned is 13$" + System.lineSeparator()
+                + "You earned:4 frequent renter points";
         assertEquals(statementExpected, customerTest.statement());
     }
 

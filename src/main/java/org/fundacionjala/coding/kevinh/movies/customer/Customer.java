@@ -1,10 +1,10 @@
-package org.fundacionjala.coding.kevinherrera.movies.customer;
+package org.fundacionjala.coding.kevinh.movies.customer;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
-import org.fundacionjala.coding.kevinherrera.movies.rental.RentalMovie;
-import org.fundacionjala.coding.kevinherrera.movies.rental.RentalFactory;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.rental.RentalMovie;
+import org.fundacionjala.coding.kevinh.movies.rental.RentalFactory;
 
 /**
  * @author kevinherrera - AWT-[01].

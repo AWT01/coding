@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.kevinherrera.movies.movie;
+package org.fundacionjala.coding.kevinh.movies.movie;
 
 /**
  * @author kevinherrera - AWT-[01].
@@ -8,6 +8,9 @@ public abstract class Movie {
     public static final int CHILDREN = 2;
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
+    static final double NORMAL_MOVIE_PRICE = 1.5;
+    static final double NEW_RELEASE_MOVIE_PRICE = 3;
+    static final double REGULAR_2_DAYS_PRICE = 4;
     private String title;
     private int priceCode;
 
@@ -51,11 +54,13 @@ public abstract class Movie {
                 codeString = "NEW RELEASE";
                 break;
             case 2:
-                codeString = "CHILDRENS";
+                codeString = "CHILDREN";
                 break;
             default:
                 break;
         }
         return codeString;
     }
+
+    public abstract double getRentCost(final int daysRented);
 }

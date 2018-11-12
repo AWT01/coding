@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.kevinherrera.movies.movie;
+package org.fundacionjala.coding.kevinh.movies.movie;
 
 /**
  * @author kevinherrera - AWT-[01].
@@ -11,5 +11,15 @@ public class MovieNewRelease extends Movie {
      */
     public MovieNewRelease(final String title) {
         super(title, Movie.NEW_RELEASE);
+    }
+
+    /**
+     * .
+     * @param daysRented .
+     * @return .
+     */
+    @Override
+    public double getRentCost(int daysRented) {
+        return daysRented * NEW_RELEASE_MOVIE_PRICE;
     }
 }

@@ -1,7 +1,7 @@
-package org.fundacionjala.coding.Movies;
+package org.fundacionjala.coding.kevinh.movies;
 
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
-import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.movie.MovieFactory;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +18,6 @@ public class TestMovie {
      * .
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
     public void testCreateRegularMovie() {
         Movie newMovie = MovieFactory.createRegularMovie(REGULAR_MOVIE_TITLE);
         assertEquals(Movie.REGULAR, newMovie.getPriceCode());
@@ -28,7 +27,6 @@ public class TestMovie {
      * .
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
     public void testCreateNewReleaseMovie() {
         Movie newMovie = MovieFactory.createNewReleaseMovie(NEW_RELEASE_MOVIE_TITLE);
         assertEquals(Movie.NEW_RELEASE, newMovie.getPriceCode());
@@ -38,7 +36,6 @@ public class TestMovie {
      * .
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
     public void testCreateChildrenMovie() {
         Movie newMovie = MovieFactory.createChildrenMovie(CHILDREN_MOVIE_TITLE);
         assertEquals(Movie.CHILDREN, newMovie.getPriceCode());

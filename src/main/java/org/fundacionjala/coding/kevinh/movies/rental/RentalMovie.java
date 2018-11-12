@@ -1,6 +1,6 @@
-package org.fundacionjala.coding.kevinherrera.movies.rental;
+package org.fundacionjala.coding.kevinh.movies.rental;
 
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
 
 /**
  * @author kevinherrera - AWT-[01].
@@ -44,26 +44,21 @@ public class RentalMovie {
      * @return value
      */
     public double getRentAmount() {
-        double totalAmount = 0;
+        double amount = 0;
+        amount = getMovie().getRentCost(daysRented);
         switch (getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                if (getDaysRented() <= 2) {
-                    totalAmount = getDaysRented() * 2;
-                }
-                if (getDaysRented() > 2) {
-                    totalAmount = REGULAR2DAYSPRICE;
-                    totalAmount += (getDaysRented() - 2) * NORMAL_MOVIE_PRICE;
-                }
+
                 break;
             case Movie.NEW_RELEASE:
-                totalAmount = getDaysRented() * NEW_RELEASE_MOVIE_PRICE;
+                amount = getDaysRented() * NEW_RELEASE_MOVIE_PRICE;
                 break;
             case Movie.CHILDREN:
-                totalAmount = getDaysRented() * NORMAL_MOVIE_PRICE;
+                amount = getDaysRented() * NORMAL_MOVIE_PRICE;
                 break;
             default:
                 break;
         }
-        return totalAmount;
+        return amount;
     }
 }

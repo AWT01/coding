@@ -1,8 +1,8 @@
-package org.fundacionjala.coding.Movies;
+package org.fundacionjala.coding.kevinh.movies;
 
-import org.fundacionjala.coding.kevinherrera.movies.movie.Movie;
-import org.fundacionjala.coding.kevinherrera.movies.movie.MovieFactory;
-import org.fundacionjala.coding.kevinherrera.movies.rental.RentalMovie;
+import org.fundacionjala.coding.kevinh.movies.movie.Movie;
+import org.fundacionjala.coding.kevinh.movies.movie.MovieFactory;
+import org.fundacionjala.coding.kevinh.movies.rental.RentalMovie;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +17,6 @@ public class TestRentalMovie {
      * .
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
     public void testRentalMovie5Days() {
         Movie movie = MovieFactory.createRegularMovie("X men");
         RentalMovie rentalMovieTest = new RentalMovie(movie, DAY_RENT_5);
@@ -28,7 +27,6 @@ public class TestRentalMovie {
      * .
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
     public void testGetRentedMovie() {
         Movie movie = MovieFactory.createRegularMovie("Justice League");
         RentalMovie rentalMovieTest = new RentalMovie(movie, DAY_RENT_5);

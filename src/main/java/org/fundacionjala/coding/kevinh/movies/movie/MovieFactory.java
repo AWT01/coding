@@ -1,17 +1,10 @@
-package org.fundacionjala.coding.kevinherrera.movies.movie;
+package org.fundacionjala.coding.kevinh.movies.movie;
 
 /**
  * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
 public final class MovieFactory {
-
-    /**
-     * .
-     */
-    protected MovieFactory() {
-    }
-
     /**
      * .
      * @param title title
