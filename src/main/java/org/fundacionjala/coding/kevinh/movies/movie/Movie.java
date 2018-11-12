@@ -62,5 +62,10 @@ public abstract class Movie {
         return codeString;
     }
 
-    public abstract double getRentCost(final int daysRented);
+    /**
+     * .
+     * @param daysRented .
+     * @return .
+     */
+    public abstract double getRentCost(int daysRented);
 }

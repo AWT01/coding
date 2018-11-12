@@ -6,7 +6,7 @@ import org.fundacionjala.coding.kevinh.movies.movie.Movie;
  * @author kevinherrera - AWT-[01].
  * @version 0.1
  */
-public class RentalFactory {
+public abstract class RentalFactory {
 
     /**
      *.
