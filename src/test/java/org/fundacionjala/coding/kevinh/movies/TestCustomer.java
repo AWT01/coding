@@ -27,6 +27,7 @@ public class TestCustomer {
     static final int RENT_AMOUNT_10 = 10;
     static final int RENT_AMOUNT_15 = 15;
 
+    static final int RENT_POINTS_1 = 1;
     static final int RENT_POINTS_2 = 2;
     static final int RENT_POINTS_3 = 3;
     static final int RENT_POINTS_4 = 4;
@@ -157,14 +158,24 @@ public class TestCustomer {
      * .
      */
     @Test
+    public void testRentNewRelease1DayGetFrequentRenterPoints() {
+        Customer customerTest = new Customer("juan");
+        Movie newMovie = MovieFactory.createNewReleaseMovie(NEW_RELEASE_MOVIE_TITLE);
+        customerTest.rentMovie(newMovie, DAYS_RENT_1);
+        assertEquals(RENT_POINTS_1, customerTest.getFrequentRenterPoints());
+    }
+    /**
+     * .
+     */
+    @Test
     public void testStatement() {
         Customer customerTest = new Customer("JOSE");
         Movie movieRevenant = MovieFactory.createNewReleaseMovie("The Revenant");
         Movie movieTerminator = MovieFactory.createRegularMovie("Terminator");
         Movie movieLionKing = MovieFactory.createChildrenMovie("Lion King");
-        customerTest.rentMovie(movieRevenant, 2);
-        customerTest.rentMovie(movieTerminator, 2);
-        customerTest.rentMovie(movieLionKing, 2);
+        customerTest.rentMovie(movieRevenant, DAYS_RENT_2);
+        customerTest.rentMovie(movieTerminator, DAYS_RENT_2);
+        customerTest.rentMovie(movieLionKing, DAYS_RENT_2);
         String statementExpected = "RentalMovie Record for: JOSE"
                 + System.lineSeparator()
                 + "Title: The Revenant(NEW RELEASE)||\tRent Amount: 6 $||\tDays Rented: 2 day(s)"
