@@ -6,19 +6,13 @@ package org.fundacionjala.coding.kevincristhian;
 public abstract class Movie {
     private String title;
     private double costFactor;
-    private int frequentPoints;
-    private int daysRented;
-
     /**
      * the constructor of the class.
      *
-     * @param title the title of the movie
-     * @param daysRented number of days rented
+     * @param title the title of the movie.
      */
-    public Movie(final String title, int daysRented) {
+    public Movie(final String title) {
         this.title = title;
-        this.frequentPoints = 1;
-        this.daysRented = daysRented;
     }
 
     /**
@@ -48,38 +42,4 @@ public abstract class Movie {
     public double getCostFactor() {
         return costFactor;
     }
-
-    /**
-     * set the frequent points.
-     *
-     * @param frequentPoints set points
-     */
-    public void setFrequentPoints(int frequentPoints) {
-        this.frequentPoints = frequentPoints;
-    }
-
-    /**
-     * getter of frequent points.
-     *
-     * @return amount of points
-     */
-    public int getFrequentPoints() {
-        return frequentPoints;
-    }
-
-    /**
-     * getter of days rented.
-     *
-     * @return number of days
-     */
-    public int getDaysRented() {
-        return daysRented;
-    }
-
-    /**
-     *abstract method for rent cost of the movie.
-     *
-     * @return amount of rent
-     */
-    public abstract double calculateRentCost();
 }

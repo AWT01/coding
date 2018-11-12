@@ -1,22 +1,56 @@
 package org.fundacionjala.coding.kevincristhian;
 
+import java.util.ArrayList;
+
 /**
  * customer class, it has a 1 to N
  * relation with rental class.
  */
 public class Customer {
     private String name;
-    private Rental rental;
+    private ArrayList<Rental> rentalList;
 
     /**
      * constructor for customer.
      *
      * @param name the name of the customer
-     * @param rental rental object
      */
-    public Customer(final String name, final Rental rental) {
+    public Customer(final String name) {
         this.name = name;
-        this.rental = rental;
+        rentalList = new ArrayList<>();
+    }
+
+    /**
+     * add rentals.
+     * @param rental to be added.
+     */
+    public void addRental(final Rental rental) {
+        rentalList.add(rental);
+    }
+
+    /**
+     * amount of the rent of the movie.
+     * @return total of rent
+     */
+    public double calculateTotalCost() {
+        double totalCost = 0;
+        for (Rental each:rentalList) {
+            totalCost += each.calculateRentCost();
+        }
+        return totalCost;
+    }
+
+    /**
+     * amount of points.
+     *
+     * @return total of rent points
+     */
+    public int calculateTotalPoints() {
+        int totalPoints = 0;
+        for (Rental each :rentalList) {
+            totalPoints += each.getFrequentPoint();
+        }
+        return totalPoints;
     }
 
     /**
@@ -31,10 +65,10 @@ public class Customer {
         result.append(name);
         result.append("\n");
         result.append("Amount owed is ");
-        result.append(rental.calculateTotalCost());
+        result.append(calculateTotalCost());
         result.append("\n");
         result.append("You earned ");
-        result.append(rental.calculateTotalPoints());
+        result.append(calculateTotalPoints());
         result.append(" frequent renter points");
         return result.toString();
     }

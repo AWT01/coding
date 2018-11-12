@@ -1,53 +1,48 @@
 package org.fundacionjala.coding.kevincristhian;
 
-import java.util.ArrayList;
-
 /**
  * class rental it has a 1 to 1 relation
  * with movie class.
  */
-public class Rental {
-    private ArrayList<Movie> movieList;
+public abstract class Rental {
+
+    private Movie movie;
+    private int daysRented;
 
     /**
      * constructor of rental class.
      */
-    public Rental() {
-        movieList = new ArrayList<>();
+    public Rental(final Movie movie, int daysRented) {
+        this.movie = movie;
+        this.daysRented = daysRented;
     }
 
     /**
-     * method to add a movie to a list.
-     *
-     * @param movie movie object
+     * get movie method.
+     * @return movie.
      */
-    public void addMovie(final Movie movie) {
-        movieList.add(movie);
+    public Movie getMovie() {
+        return movie;
     }
 
     /**
-     * amount of the rent of the movie.
-     * @return total of rent
+     * get days rented.
+     * @return int.
      */
-    public double calculateTotalCost() {
-        double totalCost = 0;
-        for (Movie each:movieList) {
-            totalCost += each.calculateRentCost();
-        }
-        return totalCost;
+    public int getDaysRented() {
+        return daysRented;
     }
 
     /**
-     * amount of points.
-     *
-     * @return total of rent points
+     * cost of rent.
+     * @return double.
      */
-    public int calculateTotalPoints() {
-        int totalPoints = 0;
-        for (Movie each :movieList) {
-            totalPoints += each.getFrequentPoints();
-        }
-        return totalPoints;
-    }
+    public abstract double calculateRentCost();
+
+    /**
+     * frecuent points.
+     * @return int.
+     */
+    public abstract int getFrequentPoint();
 }
 
