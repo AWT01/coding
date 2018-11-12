@@ -13,7 +13,6 @@ public class VigenereCrypto extends CesarCrypto {
      */
     @Override
     public String encode(final String message, final String key) {
-        super.encode(message, key);
         return encryptTask(EncryptTask.ENCODE, message, key);
     }
 
@@ -25,7 +24,6 @@ public class VigenereCrypto extends CesarCrypto {
      */
     @Override
     public String decode(final String key, final String encodeMessage) {
-        super.decode(key, encodeMessage);
         return encryptTask(EncryptTask.DECODE, encodeMessage, key).toLowerCase();
     }
 
@@ -37,7 +35,8 @@ public class VigenereCrypto extends CesarCrypto {
      * @param stringKey codification key
      * @return message encrypted or decrypted determinated by task value
      */
-    private String encryptTask(final EncryptTask task, final String message, final String stringKey) {
+    @Override
+    protected String encryptTask(final EncryptTask task, final String message, final String stringKey) {
         StringBuilder messageBuilder = new StringBuilder();
         if (message == null || stringKey == null) {
             return messageBuilder.toString();

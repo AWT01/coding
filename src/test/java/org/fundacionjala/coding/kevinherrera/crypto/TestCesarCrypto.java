@@ -8,10 +8,10 @@ import static org.junit.Assert.assertEquals;
  * test NormalCrypto class.
  */
 public class TestCesarCrypto {
-    private static final int ENCODE_KEY_3 = 3;
-    private static final int ENCODE_KEY_MINUS_3 = -3;
-    private static final int ENCODE_KEY_5 = 5;
-    private static final int ENCODE_KEY_MINUS_5 = -5;
+    private static final String ENCODE_KEY_3 = "3";
+    private static final String ENCODE_KEY_MINUS_3 = "-3";
+    private static final String ENCODE_KEY_5 = "5";
+    private static final String ENCODE_KEY_MINUS_5 = "-5";
     private CesarCrypto crypto;
 
     /**
